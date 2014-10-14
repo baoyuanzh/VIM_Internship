@@ -20,42 +20,83 @@
     <header>
       <div class="inner">
         <h1>Vim  实习生</h1>
-        <h2>实用VIM技术报告</h2>
+        <h2>实用 VIM 技术报告</h2>
         <a href="https://github.com/baoyuanzh/VIM_Internship" class="button"><small>View project on</small> GitHub</a>
       </div>
     </header>
 
     <div id="content-wrapper">
       <div class="inner clearfix">
+
+        <!-- Main Contents -->
         <section id="main-content">
-          <h3>欢迎来到我的 VIM 实习生</h3>
+          <section class="intro">
+            <h3>欢迎来到我的 &laquo;VIM 实习生&raquo;</h3>
+            <p>几年前偶尔接触了 Vim ，同时听说了 Emacs ，之后便断断续续的开始自学 Vim ，资料找过不少，看了忘忘了又看，发现 Vim 水平没提高多少，依然只会用简单的几个命令，连寄存器都没怎么用过，更别说什么宏啊，映射啊，折叠啊之类听起来就高大上的东西。有问题的时候就上网查一下，用过之后就忘记了，又要用就又去查，其实心里面一直觉得老这么着也不是个事啊，但还是这么着又过了段时间，大概觉得也许是 Vim 不适合我，所以就去尝试了 Emacs ，用了一段时间觉得要记得命令太多，而且多是组合键，哪怕是改了键盘 Tab 键也不适应，最后又不了了之了。</p>
+            <p>终于有一天，在一本书上我读到了这么一段话，当然了，是我翻译过的 : )</p>
+            <q>你估摸着一个画家在作画时，有多少时间画笔和帆布是接触着的？当然了，这要看是谁在作画，但如果你要是告诉我有一半的时间，我一定会觉得难以置信。想想画家除了用画笔在帆布上作画以外的事情，比如观察画面上的物体，调整光线，调色；又比如，谁说非要用画笔的，有时候还可以用刮刀来改变一下局部的风格，又或者是用棉球微微调整画好的地方。画家不会傻不兮兮地把画笔按在帆布上来休息吧。</q>
+            <p>读到这一段话的时候简直如当头棒喝，我本人曾有一段时期经过专业的绘画训练，因而对此感触实在是太深刻了，这一段话接着这样写道：</p>
+            <q>Vim 也是如此，其正常模式实是再自然不过的事情了，从名字里就可以看出端倪了，真的如此！</q>
+            <q>就像画家需要停笔思考，程序员也是如此，他们也需要花时间来一段一段组合出代码。更多的时间花在思考，阅读，以及从一个地方跳到另一个地方的转移上面，而当他们的确需要做出改动时，谁说非要进入插入模式呢，在正常模式下，他们就可以调整已有代码的格式，复制，移动或者删除，在正常模式下他们就有足够多的工具来完成这样的任务。</q>
+            <p>然后我如饥似渴的读完了整本书，它让我知道该怎样去欣赏 Vim 的优雅与气质，尽管此后由于一些事情，我未能将书中所学用于实践，看过的又几乎全忘了，但是我始终没有忘记这一段描写对 Vim 阐述，我知道这就是我需要的，所以如今我再次阅读该书，并在学习的同时，希望将紧要简短的内容制作成网页，以便自己反复记忆。</p>
+            <p>所谓独乐乐不如众乐乐，我将其在本站公布，同时作为我学习 HTML&amp;CSS 建设的第一个网站</p>
+            <p>本网站的内容将全部通过 Vim 录入，更准确地说，通过我 Macbook Pro 上的 mvim 与 vim 录入。</p>
+            <p>本网页内容主要参考 <a href="http://drewneil.com/">Drew Neil</a> 的 <a href="https://pragprog.com/book/dnvim/practical-vim">Practical Vim</a> 写作而成</p>
+          </section>
 
-<p>本网页内容主要参考 Drew Neil 的 Practical Vim 写作而成</p>
+          <!-- Part 0: The Vim Way -->
+          <section class="p0-way">
+            <h3>我们都是 VIM 派</h3>
+            <p></p>
+          </section>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+          <!-- Part 1: Modes -->
+          <section class="p1-modes">
+            <h3>VIM 的几种模式</h3>
+            <p></p>
+          </section>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+          <!-- Part 2: Files -->
+          <section class="p2-files">
+            <h3>文件处理</h3>
+            <p></p>
+          </section>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+          <!-- Part 3: Getting Around Faster -->
+          <section class="p3-getting-around-faster">
+            <h3>快速浏览与操作</h3>
+            <p></p>
+          </section>
+          
+          <!-- Part 4: Registers -->
+          <section class="p4-registers">
+            <h3>寄存器</h3>
+            <p></p>
+          </section>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+          <!-- Part 5: Patterns -->
+          <section class="p5-patterns">
+            <h3>模型</h3>
+            <p></p>
+          </section>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+          <!-- Part 6: Tools -->
+          <section class="p6-tools">
+            <h3>工具</h3> <p></p> </section>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+          <!-- About Author -->
+          <section class="Author">
+            <h3>作者</h3>
+            <p></p>
+          </section>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+          <!-- Contact me -->
+          <section class="contact">
+            <h3>联系我</h3>
+            <p>如果您对本网站有问题可邮件与我联系</p>
+          </section>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
         </section>
 
         <aside id="sidebar">
