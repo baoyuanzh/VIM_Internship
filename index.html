@@ -21,6 +21,7 @@
       <div class="inner">
         <h1>Vim  实习生</h1>
         <h2>实用 VIM 技术报告</h2>
+        <p>本网页内容主要参考 <a href="http://drewneil.com/">Drew Neil</a> 的 <a href="https://pragprog.com/book/dnvim/practical-vim">Practical Vim</a> 写作而成</p>
         <a href="https://github.com/baoyuanzh/VIM_Internship" class="button"><small>View project on</small> GitHub</a>
       </div>
     </header>
@@ -34,22 +35,56 @@
             <h3>欢迎来到我的 &laquo;VIM 实习生&raquo;</h3>
             <p>几年前偶尔接触了 Vim ，同时听说了 Emacs ，之后便断断续续的开始自学 Vim ，资料找过不少，看了忘忘了又看，发现 Vim 水平没提高多少，依然只会用简单的几个命令，连寄存器都没怎么用过，更别说什么宏啊，映射啊，折叠啊之类听起来就高大上的东西。有问题的时候就上网查一下，用过之后就忘记了，又要用就又去查，其实心里面一直觉得老这么着也不是个事啊，但还是这么着又过了段时间，大概觉得也许是 Vim 不适合我，所以就去尝试了 Emacs ，用了一段时间觉得要记得命令太多，而且多是组合键，哪怕是改了键盘 Tab 键也不适应，最后又不了了之了。</p>
             <p>终于有一天，在一本书上我读到了这么一段话，当然了，是我翻译过的 : )</p>
-            <q>你估摸着一个画家在作画时，有多少时间画笔和帆布是接触着的？当然了，这要看是谁在作画，但如果你要是告诉我有一半的时间，我一定会觉得难以置信。想想画家除了用画笔在帆布上作画以外的事情，比如观察画面上的物体，调整光线，调色；又比如，谁说非要用画笔的，有时候还可以用刮刀来改变一下局部的风格，又或者是用棉球微微调整画好的地方。画家不会傻不兮兮地把画笔按在帆布上来休息吧。</q>
+            <blockquote>你估摸着一个画家在作画时，有多少时间画笔和帆布是接触着的？当然了，这要看是谁在作画，但如果你要是告诉我有一半的时间，我一定会觉得难以置信。想想画家除了用画笔在帆布上作画以外的事情，比如观察画面上的物体，调整光线，调色；又比如，谁说非要用画笔的，有时候还可以用刮刀来改变一下局部的风格，又或者是用棉球微微调整画好的地方。画家不会傻不兮兮地把画笔按在帆布上来休息吧。</blockquote>
             <p>读到这一段话的时候简直如当头棒喝，我本人曾有一段时期经过专业的绘画训练，因而对此感触实在是太深刻了，这一段话接着这样写道：</p>
-            <q>Vim 也是如此，其正常模式实是再自然不过的事情了，从名字里就可以看出端倪了，真的如此！</q>
-            <q>就像画家需要停笔思考，程序员也是如此，他们也需要花时间来一段一段组合出代码。更多的时间花在思考，阅读，以及从一个地方跳到另一个地方的转移上面，而当他们的确需要做出改动时，谁说非要进入插入模式呢，在正常模式下，他们就可以调整已有代码的格式，复制，移动或者删除，在正常模式下他们就有足够多的工具来完成这样的任务。</q>
+            <blockquote>Vim 也是如此，其正常模式实是再自然不过的事情了，从名字里就可以看出端倪了，真的如此！</blockquote>
+            <blockquote>就像画家需要停笔思考，程序员也是如此，他们也需要花时间来一段一段组合出代码。更多的时间花在思考，阅读，以及从一个地方跳到另一个地方的转移上面，而当他们的确需要做出改动时，谁说非要进入插入模式呢，在正常模式下，他们就可以调整已有代码的格式，复制，移动或者删除，在正常模式下他们就有足够多的工具来完成这样的任务。</blockquote>
             <p>然后我如饥似渴的读完了整本书，它让我知道该怎样去欣赏 Vim 的优雅与气质，尽管此后由于一些事情，我未能将书中所学用于实践，看过的又几乎全忘了，但是我始终没有忘记这一段描写对 Vim 阐述，我知道这就是我需要的，所以如今我再次阅读该书，并在学习的同时，希望将紧要简短的内容制作成网页，以便自己反复记忆。</p>
+            <p>我想也许学习 Vim 最好的方式就是去理解它，按照它的风格去编辑，然后也许有一天你会发现，Vim 开始理解你了</p>
             <p>所谓独乐乐不如众乐乐，我将其在本站公布，同时作为我学习 HTML&amp;CSS 建设的第一个网站</p>
             <p>本网站的内容将全部通过 Vim 录入，更准确地说，通过我 Macbook Pro 上的 mvim 与 vim 录入。</p>
-            <p>本网页内容主要参考 <a href="http://drewneil.com/">Drew Neil</a> 的 <a href="https://pragprog.com/book/dnvim/practical-vim">Practical Vim</a> 写作而成</p>
+
           </section>
 
           <!-- Part 0: The Vim Way -->
           <section class="p0-way">
             <h3>我们都是 VIM 派</h3>
-            <p></p>
-          </section>
+            <p>说实话，编辑工作从某种角度下看，其本质是重复的。那么简化这种重复的工作绝对可以大量的节约时间，虽然不是根本性的，但却是多方面的。</p>
+            <p>Vim 尤其善于处理重复，因为其自动为我们记录下最近的操作，我们总可以用一个句点来重复。为了最高效的利用这一特性，我们有着一个理想化的公式，即所谓的<b>句点公式</b>：</p>
+            <p><em>一键移动，一键操作</em></p>
+            <p>而这样的理念似乎贯穿着整个 Vim 的设计，我将之称为 Vim 派，理解 Vim 派是你开始理解 Vim 的第一步。但是站着说话不腰疼，除非你学会如何组织操作以便 Vim 为我们完成重复的工作，否则 Vim 特意为重复所做的优化将毫无用武之地。以下通过五个实例来说明这一点</p>
 
+            <!-- Tip 1 -->
+            <article id="tip-1">
+            <h4>备忘一、理解句点命令</h4>
+            </article>
+
+            <!-- Tip 2 -->
+            <article id="tip-2">
+            <h4>备忘二、避免重复原始操作</h4>
+            </article>
+            
+            <!-- Tip 3 -->
+            <article id="tip-3">
+            <h4>备忘三、退一步，海阔天空</h4>
+            </article>
+            
+            <!-- Tip 4 -->
+            <article id="tip-4">
+            <h4>备忘四、执行、重复、撤销</h4>
+            </article>
+            
+            <!-- Tip 5 -->
+            <article id="tip-5">
+            <h4>备忘五、手动搜索与替换</h4>
+            </article>
+            
+            <!-- Tip 6 -->
+            <article id="tip-6">
+            <h4>备忘六、句点公式</h4>
+            </article>
+
+          </section>
 
           <!-- Part 1: Modes -->
           <section class="p1-modes">
@@ -94,7 +129,7 @@
           <!-- Contact me -->
           <section class="contact">
             <h3>联系我</h3>
-            <p>如果您对本网站有问题可邮件与我联系</p>
+            <p>如果您对本网站有问题可<a href="mailto:baoyuan.zh@gmail.com">邮件</a>与我联系</p>
           </section>
 
         </section>
@@ -102,11 +137,19 @@
         <aside id="sidebar">
           <a href="https://github.com/baoyuanzh/VIM_Internship/zipball/master" class="button">
             <small>Download</small>
-            .zip file
+            master.zip 
           </a>
-          <a href="https://github.com/baoyuanzh/VIM_Internship/tarball/master" class="button">
+          <a href="https://github.com/baoyuanzh/VIM_Internship/zipball/gh-pages" class="button">
             <small>Download</small>
-            .tar.gz file
+            pages.zip 
+          </a>
+          <a href="https://github.com/baoyuanzh/VIM_Internship/zipball/master" class="button">
+            <small>Download</small>
+            master.tar.gz 
+          </a>
+          <a href="https://github.com/baoyuanzh/VIM_Internship/tarball/gh-pages" class="button">
+            <small>Download</small>
+            pages.tar.gz 
           </a>
 
           <p class="repo-owner"><a href="https://github.com/baoyuanzh/VIM_Internship"></a> is maintained by <a href="https://github.com/baoyuanzh">宝元(baoyuanzh)</a>.</p>

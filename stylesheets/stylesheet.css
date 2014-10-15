@@ -89,6 +89,18 @@ header h2 {
   letter-spacing: 0;
 }
 
+header p {
+  color: #ccc;
+  text-align: right;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: yellow;
+}
 .inner {
   position: relative;
   width: 940px;
@@ -318,7 +330,8 @@ p a {
 }
 
 blockquote {
-  font-size: 1.6em;
+  font-size: 1em;
+  color: #2e7bcf;
   border-left: 10px solid #e9e9e9;
   margin-bottom: 20px;
   padding: 0 0 0 30px;
