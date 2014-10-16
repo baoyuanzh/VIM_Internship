@@ -63,13 +63,26 @@
                 <li>在正常模式下的一个命令，比如删除一个字符 <span class="command">x</span>，删除一行 <span class="command">dd</span>，缩进一行 <span class="command">&gt;&gt;</span> 。</li>
                 <li>从正常模式进入插入模式到离开插入模式间所有的按键操作整个作为一次改变。</li>
               </ol>
-              <p>试着下载文件 <a download href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-1.txt">tip-1.txt</a> 用 Vim 打开，并按上面说的做，你就知道我在说什么了。<p>
+              <p>试着下载文件 <a download="tip-1.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-1.txt">tip-1.txt</a> 用 Vim 打开，并按上面说的做，你就知道我在说什么了。<p>
             </article>
 
             <!-- Tip 2 -->
             <article id="tip-2">
             <h4>备忘二、避免重复原始操作</h4>
-
+            <p>有些操作描述起来是完全重复的，比如在每一行的末尾加一个分号，你只要通过 <span class="command">j</span> 键移动到要加分号的行，按 <span class="command">$</span> 键移动至行尾，然后按 <span class="command">a</span> 键就可以加入分号 <span class="command">;</span> 了，完成后按 <span class="command">[ESC]</span> 键回到正常模式。总结一下，在某一行完成这一任务需要依次完成以下按键 <span class="command">j $ a ; [ESC]</span>，然后你可以不断重复这一操作已完成改变。看到这里，如果你真的理解了句点命令的含义，你就会发现其中的 <span class="command">a ; [ESC]</span> 就是一个完整的“改变”，从而可以用句点 <span class="command">.</span> 一键代替，于是原本的操作已经精简为 <span class="command">j $ .</span> 了。怎么样，感觉到 Vim 的威力了吗？</p>
+            <p>事实上，我们还可以作进一步精简，考虑到，命令 <span class="command">A</span> 相当于 <span class="command">$ a</span> 两次按键，如果从一开始我们就这样做，即使用 <span class="command">j A ; [ESC]</span> 加分号，那么在重复时，我们只需要按 <span class="command">j .</span> 两键就可以了，还记得那个句点公式吗，一键移动，一键操作，正是如此的写照。</p>
+            <p>从这个简单的例子可见，磨刀不误砍柴工，好好组织一下第一次操作，可以为你之后的重复操作节省不少力气哦！</p>
+            <p>像刚刚的例子，命令 <span class="command">A</span> 可以看成是两个命令 <span class="command">$ a</span> 的组合操作，Vim 中其实有不少这样的例子，以下就是一些常见的例子，具体解释请自行查询 <span class="command">:h [command]</span> 。</p>
+            <ul>
+              <li> <span class="command">C</span> = <span class="command">c $</span> </li>
+              <li> <span class="command">s</span> = <span class="command">c l</span> </li>
+              <li> <span class="command">S</span> = <span class="command">^ C</span> </li>
+              <li> <span class="command">I</span> = <span class="command">^ i</span> </li>
+              <li> <span class="command">A</span> = <span class="command">$ a</span> </li>
+              <li> <span class="command">o</span> = <span class="command">A [Enter]<span> </li>
+              <li> <span class="command">O</span> = <span class="command">k o</span> </li>
+            </ul>
+            <p>下载文件 <a download="tip-2.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-2.txt">tip-2.txt</a> 尝试一下吧。<p>
             </article>
             
             <!-- Tip 3 -->
