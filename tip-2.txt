@@ -1,0 +1,25 @@
+以下这个简单的 C 程序，我们忘了在每个语句后面加 ; ，因此不能编译通过。
+现在我们来修改它，在正常模式下定位到需要加分号的第一行，依次键入命令 $a;[ESC]
+然后重复 j$. 完成修改
+
+#include<stdio.h>
+int main ( int argc, char * argv[] )
+{
+  char name[256]
+  printf("Enter your name please: ")
+  scanf("%s", name)
+  printf("Hello, %s!\n", name)
+  return 0
+}
+
+现在连续按几次 u 键将文件还原，定位到要加分号的第一行，再试试键入命令 A;[ESC]
+然后重复 j.
+
+找到感觉了吗？
+
+其他的组合命令的解释可以这样查看，比如要查看命令 C 的意义，在正常模式下输入
+:h C
+然后按回车就可以了
+要退出解释窗口，输入
+:q
+再按回车即可
