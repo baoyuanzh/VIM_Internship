@@ -283,6 +283,7 @@ form {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 15px;
   font-weight: bold;
+  margin-bottom: 6px;
   color: #474747;
 }
 
@@ -380,6 +381,21 @@ footer a:hover {
 .clearfix {display: inline-block;}
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
+
+/*
+ ******************************************************************************************
+ * User defined
+ */
+
+.command {
+  padding: 0 5px;
+  background: gray;
+  color: white;
+}
+
+/*
+ ******************************************************************************************
+ */
 
 /* #Media Queries
 ================================================== */
