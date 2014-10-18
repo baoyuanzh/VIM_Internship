@@ -4,12 +4,12 @@
 */
 
 @font-face {
-  font-family: "HanziPen SC";
-  src: url(assets/Hanzipen.ttc);
+  font-family: "迷你简丫丫";
+  src: url(assets/jianyaya.ttf);
 }
 
 @font-face {
-  font-family: "HanziPen SC";
+  font-family: "迷你简丫丫";
   src: url(assets/Hanzipen.ttc);
   font-weight: bold;
 }
@@ -61,10 +61,10 @@ table {
 
 /* LAYOUT STYLES */
 body {
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.3;
   background: #fafafa url(../images/body-bg.jpg) 0 0 repeat;
-  font-family: 'HanziPen SC', Helvetica, Arial, serif;
+  font-family: '迷你简丫丫', Helvetica, Arial, serif;
   font-weight: 400;
   color: #666;
 }
@@ -144,9 +144,11 @@ aside#sidebar {
   line-height: 1.3;
 }
 
+aside#sidebar p,
 aside#sidebar p.repo-owner,
 aside#sidebar p.repo-owner a {
   font-weight: bold;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
 }
 
 #downloads {
@@ -161,7 +163,7 @@ a.button {
   color: #fff;
   padding-left: 68px;
   padding-top: 22px;
-  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
 }
 a.button small {
   display: block;
@@ -253,7 +255,7 @@ form {
 /* GENERAL ELEMENT TYPE STYLES */
 
 #main-content h1 {
-  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: '迷你简丫丫', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 2.8em;
   letter-spacing: -1px;
   color: #474747;
@@ -267,7 +269,7 @@ form {
 }
 
 #main-content h2 {
-  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: '迷你简丫丫', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 8px;
@@ -281,8 +283,8 @@ form {
 }
 
 #main-content h3 {
-  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 18px;
+  font-family: '迷你简丫丫', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 24px;
   margin-bottom: 8px;
@@ -297,8 +299,8 @@ form {
 }
 
 #main-content h4 {
-  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 15px;
+  font-family: '迷你简丫丫', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 6px;
   color: #474747;
@@ -312,7 +314,7 @@ h4:before {
 }
 
 #main-content h5 {
-  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: '迷你简丫丫', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 14px;
   color: #474747;
 }
@@ -324,7 +326,7 @@ h5:before {
 }
 
 #main-content h6 {
-  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: '迷你简丫丫', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: .8em;
   color: #474747;
 }
