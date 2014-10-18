@@ -2,6 +2,18 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+
+@font-face {
+  font-family: "HanziPen SC";
+  src: url(assets/Hanzipen.ttc);
+}
+
+@font-face {
+  font-family: "HanziPen SC";
+  src: url(assets/Hanzipen.ttc);
+  font-weight: bold;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -44,6 +56,7 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+    margin-bottom: 20px;
 }
 
 /* LAYOUT STYLES */
@@ -51,7 +64,7 @@ body {
   font-size: 15px;
   line-height: 1.5;
   background: #fafafa url(../images/body-bg.jpg) 0 0 repeat;
-  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'HanziPen SC', Helvetica, Arial, serif;
   font-weight: 400;
   color: #666;
 }
@@ -148,7 +161,7 @@ a.button {
   color: #fff;
   padding-left: 68px;
   padding-top: 22px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
 }
 a.button small {
   display: block;
@@ -217,13 +230,17 @@ table {
 }
 
 th {
-  font-weight: 500;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 1em;
 }
 
 td {
   border: 1px solid #ebebeb;
-  text-align: center;
-  font-weight: 300;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 0.9em;
 }
 
 form {
@@ -236,7 +253,7 @@ form {
 /* GENERAL ELEMENT TYPE STYLES */
 
 #main-content h1 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 2.8em;
   letter-spacing: -1px;
   color: #474747;
@@ -250,7 +267,7 @@ form {
 }
 
 #main-content h2 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 8px;
@@ -264,7 +281,7 @@ form {
 }
 
 #main-content h3 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 18px;
   font-weight: bold;
   margin-top: 24px;
@@ -280,7 +297,7 @@ form {
 }
 
 #main-content h4 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 15px;
   font-weight: bold;
   margin-bottom: 6px;
@@ -295,7 +312,7 @@ h4:before {
 }
 
 #main-content h5 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 14px;
   color: #474747;
 }
@@ -307,7 +324,7 @@ h5:before {
 }
 
 #main-content h6 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'HanziPen SC', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: .8em;
   color: #474747;
 }

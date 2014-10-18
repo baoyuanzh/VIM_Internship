@@ -97,6 +97,18 @@
             <!-- Tip 4 -->
             <article id="tip-4">
             <h4>备忘四、执行、重复、撤销</h4>
+            <p>重复的操作，用太嗨了给用过头了怎么办？你一定会遇到这种情况，多按了一次句点命令，连着定位了两次，漏了用句点命令重复。<p>
+            <p>Vim 已经考虑到这种状况，因此对于一般的定位和执行，重复操作都设定了相应地撤销命令，具体的可以参考下表。</p>
+            <table>
+              <tr> <th>目的</th> <th>执行</th> <th>重复</th> <th>撤销</th> </tr>
+              <tr> <td>改动</td> <td>一般的编辑操作</td> <td><span class="command">.</span></td> <td><span class="command">u</span></td> </tr>
+              <tr> <td>搜索定位一行中光标后的某个字符</td> <td>f{某个字符} 或 t{某个字符}</td> <td><span class="command">;</span></td> <td><span class="command">,</span></td> </tr>
+              <tr> <td>搜索定位一行中光标前的某个字符</td> <td>F{某个字符} 或 T{某个字符}</td> <td><span class="command">;</span></td> <td><span class="command">,</span></td> </tr>
+              <tr> <td>搜索定位文件中光标后的某个模式匹配</td> <td>/模式[enter]</td> <td><span class="command">n</span></td> <td><span class="command">N</span></td> </tr>
+              <tr> <td>搜索定位文件中光标前的某个模式匹配</td> <td>?模式[enter]</td> <td><span class="command">n</span></td> <td><span class="command">N</span></td> </tr>
+              <tr> <td>替换某个模式匹配</td> <td>:s/模式匹配/替换模式</td> <td><span class="command">&amp;</span></td> <td><span class="command">u</span></td> </tr>
+              <tr> <td>执行一系列改动</td> <td>qx{一系列改动}q</td> <td><span class="command">@x</span></td> <td><span class="command">u</span></td> </tr>
+            </table>
             </article>
             
             <!-- Tip 5 -->
