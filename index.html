@@ -68,56 +68,60 @@
 
             <!-- Tip 2 -->
             <article id="tip-2">
-            <h4>备忘二、避免重复原始操作</h4>
-            <p>有些操作描述起来是完全重复的，比如在每一行的末尾加一个分号，你只要通过 <span class="command">j</span> 键移动到要加分号的行，按 <span class="command">$</span> 键移动至行尾，然后按 <span class="command">a</span> 键就可以加入分号 <span class="command">;</span> 了，完成后按 <span class="command">[ESC]</span> 键回到普通模式。总结一下，在某一行完成这一任务需要依次完成以下按键 <span class="command">j $ a ; [ESC]</span>，然后你可以不断重复这一操作已完成改动。看到这里，如果你真的理解了句点命令的含义，你就会发现其中的 <span class="command">a ; [ESC]</span> 就是一个完整的“改动”，从而可以用句点 <span class="command">.</span> 一键代替，于是原本的操作已经精简为 <span class="command">j $ .</span> 了。怎么样，感觉到 Vim 的威力了吗？</p>
-            <p>事实上，我们还可以作进一步精简，考虑到，命令 <span class="command">A</span> 相当于 <span class="command">$ a</span> 两次按键，如果从一开始我们就这样做，即使用 <span class="command">j A ; [ESC]</span> 加分号，那么在重复时，我们只需要按 <span class="command">j .</span> 两键就可以了，还记得那个句点公式吗，一键移动，一键操作，正是如此的写照。</p>
-            <p>从这个简单的例子可见，磨刀不误砍柴工，好好组织一下第一次操作，可以为你之后的重复操作节省不少力气哦！</p>
-            <p>像刚刚的例子，命令 <span class="command">A</span> 可以看成是两个命令 <span class="command">$ a</span> 的组合操作，Vim 中其实有不少这样的例子，以下就是一些常见的例子，具体解释请自行查询 <span class="command">:h [command]</span> 。</p>
-            <ul>
-              <li> <span class="command">C</span> = <span class="command">c $</span> </li>
-              <li> <span class="command">s</span> = <span class="command">c l</span> </li>
-              <li> <span class="command">S</span> = <span class="command">^ C</span> </li>
-              <li> <span class="command">I</span> = <span class="command">^ i</span> </li>
-              <li> <span class="command">A</span> = <span class="command">$ a</span> </li>
-              <li> <span class="command">o</span> = <span class="command">A [Enter]<span> </li>
-              <li> <span class="command">O</span> = <span class="command">k o</span> </li>
-            </ul>
-            <p>下载文件 <a download="tip-2.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-2.txt">tip-2.txt</a> 尝试一下吧。<p>
+              <h4>备忘二、避免重复原始操作</h4>
+              <p>有些操作描述起来是完全重复的，比如在每一行的末尾加一个分号，你只要通过 <span class="command">j</span> 键移动到要加分号的行，按 <span class="command">$</span> 键移动至行尾，然后按 <span class="command">a</span> 键就可以加入分号 <span class="command">;</span> 了，完成后按 <span class="command">[ESC]</span> 键回到普通模式。总结一下，在某一行完成这一任务需要依次完成以下按键 <span class="command">j $ a ; [ESC]</span>，然后你可以不断重复这一操作已完成改动。看到这里，如果你真的理解了句点命令的含义，你就会发现其中的 <span class="command">a ; [ESC]</span> 就是一个完整的“改动”，从而可以用句点 <span class="command">.</span> 一键代替，于是原本的操作已经精简为 <span class="command">j $ .</span> 了。怎么样，感觉到 Vim 的威力了吗？</p>
+              <p>事实上，我们还可以作进一步精简，考虑到，命令 <span class="command">A</span> 相当于 <span class="command">$ a</span> 两次按键，如果从一开始我们就这样做，即使用 <span class="command">j A ; [ESC]</span> 加分号，那么在重复时，我们只需要按 <span class="command">j .</span> 两键就可以了，还记得那个句点公式吗，一键移动，一键操作，正是如此的写照。</p>
+              <p>从这个简单的例子可见，磨刀不误砍柴工，好好组织一下第一次操作，可以为你之后的重复操作节省不少力气哦！</p>
+              <p>像刚刚的例子，命令 <span class="command">A</span> 可以看成是两个命令 <span class="command">$ a</span> 的组合操作，Vim 中其实有不少这样的例子，以下就是一些常见的例子，具体解释请自行查询 <span class="command">:h [command]</span> 。</p>
+              <ul>
+                <li> <span class="command">C</span> = <span class="command">c $</span> </li>
+                <li> <span class="command">s</span> = <span class="command">c l</span> </li>
+                <li> <span class="command">S</span> = <span class="command">^ C</span> </li>
+                <li> <span class="command">I</span> = <span class="command">^ i</span> </li>
+                <li> <span class="command">A</span> = <span class="command">$ a</span> </li>
+                <li> <span class="command">o</span> = <span class="command">A [Enter]<span> </li>
+                <li> <span class="command">O</span> = <span class="command">k o</span> </li>
+              </ul>
+              <p>下载文件 <a download="tip-2.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-2.txt">tip-2.txt</a> 尝试一下吧。<p>
             </article>
             
             <!-- Tip 3 -->
             <article id="tip-3">
-            <h4>备忘三、退一步，海阔天空</h4>
-            <p>为了重复时节省力气，在第一次操作的时候偶尔可以牺牲一下，比如说我们想在某个特定的字符前后加入空格，我们可以定位到这个字符然后按下 <span class="command">i</span> 键进入插入模式插入空格，但是后面的空格怎么办呢，在插入模式下，光标是不能移动的，即使使用左右方向键移动到那个字符后面加入空格完成了整个操作也是没用的，因为在你按下方向键的那一刻，改动已经终止，当你再次回到普通模式下，按下句点 <span class="command">.</span> 时你会发现，它只在光标前加入了一个空格，而光标后面没有任何改变，至于为什么是这样，我还在学习中，如果你知道请<a href="mailto:baoyuan.zh@gmail.com">邮件</a>联系我，或者在我 Github 的项目创建一个 <a href="https://github.com/baoyuanzh/VIM_Internship/issues/new">issue</a> 。</p>
-            <p>事实上在插入模式下来移动光标是不推荐的，因为这样会引起一系列的副作用。更为合理的做法是利用替换命令 <span class="command">s</span> ，该命令将删除当前光标下地字符然后进入插入模式等待输入，这时你就可以完成改动，再回到普通模式了，这样一来，最后一次改动就是在特定的字符前后加入空格了，接着我们就可以放心大胆的定位到下一个特定字符，通过句点命令来重复操作了。</p>
-            <p>从这个例子可以看到，有时候光是想要利用这个句点命令来方便重复操作，其本身就要费不少心思的，但是相信我，你一定会得到回报的。不信，那你下载文件 <a download="tip-3.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-3.txt">tip-3.txt</a> 试试吧。内有惊喜，如果你乐意学习。<p>
+              <h4>备忘三、退一步，海阔天空</h4>
+              <p>为了重复时节省力气，在第一次操作的时候偶尔可以牺牲一下，比如说我们想在某个特定的字符前后加入空格，我们可以定位到这个字符然后按下 <span class="command">i</span> 键进入插入模式插入空格，但是后面的空格怎么办呢，在插入模式下，光标是不能移动的，即使使用左右方向键移动到那个字符后面加入空格完成了整个操作也是没用的，因为在你按下方向键的那一刻，改动已经终止，当你再次回到普通模式下，按下句点 <span class="command">.</span> 时你会发现，它只在光标前加入了一个空格，而光标后面没有任何改变，至于为什么是这样，我还在学习中，如果你知道请<a href="mailto:baoyuan.zh@gmail.com">邮件</a>联系我，或者在我 Github 的项目创建一个 <a href="https://github.com/baoyuanzh/VIM_Internship/issues/new">issue</a> 。</p>
+              <p>事实上在插入模式下来移动光标是不推荐的，因为这样会引起一系列的副作用。更为合理的做法是利用替换命令 <span class="command">s</span> ，该命令将删除当前光标下地字符然后进入插入模式等待输入，这时你就可以完成改动，再回到普通模式了，这样一来，最后一次改动就是在特定的字符前后加入空格了，接着我们就可以放心大胆的定位到下一个特定字符，通过句点命令来重复操作了。</p>
+              <p>从这个例子可以看到，有时候光是想要利用这个句点命令来方便重复操作，其本身就要费不少心思的，但是相信我，你一定会得到回报的。不信，那你下载文件 <a download="tip-3.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-3.txt">tip-3.txt</a> 试试吧。内有惊喜，如果你乐意学习。<p>
             </article>
             
             <!-- Tip 4 -->
             <article id="tip-4">
-            <h4>备忘四、执行、重复、撤销</h4>
-            <p>重复的操作，用太嗨了给用过头了怎么办？你一定会遇到这种情况，多按了一次句点命令，连着定位了两次，漏了用句点命令重复。<p>
-            <p>Vim 已经考虑到这种状况，因此对于一般的定位和执行，重复操作都设定了相应地撤销命令，具体的可以参考下表。</p>
-            <table>
-              <tr> <th>目的</th> <th>执行</th> <th>重复</th> <th>撤销</th> </tr>
-              <tr> <td>改动</td> <td>一般的编辑操作</td> <td><span class="command">.</span></td> <td><span class="command">u</span></td> </tr>
-              <tr> <td>搜索定位一行中光标后的某个字符</td> <td>f{某个字符} 或 t{某个字符}</td> <td><span class="command">;</span></td> <td><span class="command">,</span></td> </tr>
-              <tr> <td>搜索定位一行中光标前的某个字符</td> <td>F{某个字符} 或 T{某个字符}</td> <td><span class="command">;</span></td> <td><span class="command">,</span></td> </tr>
-              <tr> <td>搜索定位文件中光标后的某个模式匹配</td> <td>/模式[enter]</td> <td><span class="command">n</span></td> <td><span class="command">N</span></td> </tr>
-              <tr> <td>搜索定位文件中光标前的某个模式匹配</td> <td>?模式[enter]</td> <td><span class="command">n</span></td> <td><span class="command">N</span></td> </tr>
-              <tr> <td>替换某个模式匹配</td> <td>:s/模式匹配/替换模式</td> <td><span class="command">&amp;</span></td> <td><span class="command">u</span></td> </tr>
-              <tr> <td>执行一系列改动</td> <td>qx{一系列改动}q</td> <td><span class="command">@x</span></td> <td><span class="command">u</span></td> </tr>
-            </table>
+              <h4>备忘四、执行、重复、撤销</h4>
+              <p>重复的操作，用太嗨了给用过头了怎么办？你一定会遇到这种情况，比如多按了一次句点命令，或者连着定位了两次，又或者漏了用句点命令重复，等等。<p>
+              <p>Vim 已经考虑到这种状况，因此对于一般的定位，执行和重复操作都设定了相应的撤销命令，具体的可以参考下表。</p>
+              <table>
+                <tr> <th>目的</th> <th>执行</th> <th>重复</th> <th>撤销</th> </tr>
+                <tr> <td>改动</td> <td>一般的编辑操作</td> <td><span class="command">.</span></td> <td><span class="command">u</span></td> </tr>
+                <tr> <td>搜索定位一行中光标后的某个字符</td> <td>f{某个字符} 或 t{某个字符}</td> <td><span class="command">;</span></td> <td><span class="command">,</span></td> </tr>
+                <tr> <td>搜索定位一行中光标前的某个字符</td> <td>F{某个字符} 或 T{某个字符}</td> <td><span class="command">;</span></td> <td><span class="command">,</span></td> </tr>
+                <tr> <td>搜索定位文件中光标后的某个模式匹配</td> <td>/模式[enter]</td> <td><span class="command">n</span></td> <td><span class="command">N</span></td> </tr>
+                <tr> <td>搜索定位文件中光标前的某个模式匹配</td> <td>?模式[enter]</td> <td><span class="command">n</span></td> <td><span class="command">N</span></td> </tr>
+                <tr> <td>替换某个模式匹配</td> <td>:s/模式匹配/替换模式</td> <td><span class="command">&amp;</span></td> <td><span class="command">u</span></td> </tr>
+                <tr> <td>执行一系列改动</td> <td>qx{一系列改动}q</td> <td><span class="command">@x</span></td> <td><span class="command">u</span></td> </tr>
+              </table>
             </article>
             
             <!-- Tip 5 -->
             <article id="tip-5">
-            <h4>备忘五、手动搜索与替换</h4>
+              <h4>备忘五、手动搜索与替换</h4>
+              <p>一般搜索以命令 <span class="command">/</span> 或者 <span class="command">?</span> 发起，但有时后如果光标恰好置于要搜索的文字上时，可以直接用命令 <span class="command">*</span> 来方便操作。具体见 <span class="command">:h *</span> 。</p>
+              <p>想想看，有了这一命令，再结合重复操作 <span class="command">n</span> 以及撤销操作 <span class="command">N</span> ，它们就构成了完整的移动命令，方便你定位到需要改动的地方，再次以句点命令重复上一次改动。</p>
             </article>
             
             <!-- Tip 6 -->
             <article id="tip-6">
-            <h4>备忘六、句点公式</h4>
+              <h4>备忘六、句点公式</h4>
+              <p>总结一下，从备忘一到备忘五，它们都有一个统一的模式，即<em>一键移动，一键操作</em>。为了强化记忆我们将之称为<em>句点公式</em>。这在 Vim 来说是理想化的，试想还能有比这更简洁的方案吗？没有。</p>
+              <p>再次强调，这一思想将贯穿于整个 Vim 的设计。</p>
             </article>
 
           </section>
@@ -125,7 +129,51 @@
           <!-- Part 1: Modes -->
           <section class="p1-modes">
             <h3>VIM 的几种模式</h3>
-            <p></p>
+            <p>Vim 有以下几种模式：</p>
+            <ol>
+              <li>普通模式 —— Normal Mode</li>
+              <li>插入模式 —— Insert Mode</li>
+              <li>可视模式 —— Visual Mode</li>
+              <li>命令行模式 —— Command-Line Mode</li>
+            </ol>
+            <p>同样的按键在不同的模式下，可能代表了不同的命令，因此，清楚了解 Vim 当前处于什么模式之下以及如何在它们之间转换是完成各类操作的必要前提。</p>
+
+            <!-- Tip 7 -->
+            <article id="tip-7">
+              <h4>备忘七</h4>
+              <p></p>
+            </article>
+
+            <!-- Tip 8 -->
+            <article id="tip-8">
+              <h4>备忘八</h4>
+              <p></p>
+            </article>
+
+            <!-- Tip 9 -->
+            <article id="tip-9">
+              <h4>备忘九</h4>
+              <p></p>
+            </article>
+
+            <!-- Tip 10 -->
+            <article id="tip-10">
+              <h4>备忘十</h4>
+              <p></p>
+            </article>
+
+            <!-- Tip 11 -->
+            <article id="tip-11">
+              <h4>备忘十一</h4>
+              <p></p>
+            </article>
+
+            <!-- Tip 12 -->
+            <article id="tip-12">
+              <h4>备忘十二</h4>
+              <p></p>
+            </article>
+
           </section>
 
           <!-- Part 2: Files -->

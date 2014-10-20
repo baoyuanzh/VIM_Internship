@@ -5,13 +5,7 @@
 
 @font-face {
   font-family: "迷你简丫丫";
-  src: url(assets/jianyaya.ttf);
-}
-
-@font-face {
-  font-family: "迷你简丫丫";
-  src: url(assets/Hanzipen.ttc);
-  font-weight: bold;
+  src: url('assets/jianyaya.ttf');
 }
 
 html, body, div, span, applet, object, iframe,
@@ -94,7 +88,7 @@ header h1 {
 }
 
 header h2 {
-  font-size: 26px;
+  font-size: 24px;
   color: #9ddcff;
   font-weight: normal;
   line-height: 1.3;
@@ -270,7 +264,7 @@ form {
 
 #main-content h2 {
   font-family: '迷你简丫丫', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: bold;
   margin-bottom: 8px;
   color: #474747;
@@ -287,8 +281,9 @@ form {
   font-size: 24px;
   font-weight: bold;
   margin-top: 24px;
-  margin-bottom: 8px;
-  color: #474747;
+  margin-bottom: 12px;
+  color: #00f;
+  border-bottom: 1px solid #474747;
 }
 
 #main-content h3:before {
@@ -300,10 +295,10 @@ form {
 
 #main-content h4 {
   font-family: '迷你简丫丫', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   margin-bottom: 6px;
-  color: #474747;
+  color: #0d9dff;
 }
 
 h4:before {
