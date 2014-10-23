@@ -34,7 +34,7 @@
           <section class="intro">
             <h3>欢迎来到我的 &laquo;VIM 实习生&raquo;</h3>
             <p>几年前偶尔接触了 Vim ，同时听说了 Emacs ，之后便断断续续的开始自学 Vim ，资料找过不少，看了忘忘了又看，发现 Vim 水平没提高多少，依然只会用简单的几个命令，连寄存器都没怎么用过，更别说什么宏啊，映射啊，折叠啊之类听起来就高大上的东西。有问题的时候就上网查一下，用过之后就忘记了，又要用就又去查，其实心里面一直觉得老这么着也不是个事啊，但还是这么着又过了段时间，大概觉得也许是 Vim 不适合我，所以就去尝试了 Emacs ，用了一段时间觉得要记得命令太多，而且多是组合键，哪怕是改了键盘 Tab 键也不适应，最后又不了了之了。</p>
-            <p>终于有一天，在一本书上我读到了这么一段话，当然了，是我翻译过的 : )</p>
+            <p id="painting-analogy">终于有一天，在一本书上我读到了这么一段话，当然了，是我翻译过的 : )</p>
             <blockquote>你估摸着一个画家在作画时，有多少时间画笔和帆布是接触着的？当然了，这要看是谁在作画，但如果你要是告诉我有一半的时间，我一定会觉得难以置信。想想画家除了用画笔在帆布上作画以外的事情，比如观察画面上的物体，调整光线，调色；又比如，谁说非要用画笔的，有时候还可以用刮刀来改动一下局部的风格，又或者是用棉球微微调整画好的地方。画家不会傻不兮兮地把画笔按在帆布上来休息吧。</blockquote>
             <p>读到这一段话的时候简直如当头棒喝，我本人曾有一段时期经过专业的绘画训练，因而对此感触实在是太深刻了，这一段话接着这样写道：</p>
             <blockquote>Vim 也是如此，其普通模式实是再自然不过的事情了，从名字里就可以看出端倪了，真的如此！</blockquote>
@@ -58,7 +58,7 @@
             <article id="tip-1">
               <h4>备忘一、理解句点命令</h4>
               <p>句点命令的官方定义为<b>重复执行最后一次改动</b>。要真正应用好这一点，首先要明白什么是“改动”。</p>
-              <p>在 Vim 看来，一次“改动”大概可以分成这么两类：</p>
+              <p id="tip-1-change">在 Vim 看来，一次“改动”大概可以分成这么两类：</p>
               <ol>
                 <li>在普通模式下的一个命令，比如删除一个字符 <span class="command">x</span>，删除一行 <span class="command">dd</span>，缩进一行 <span class="command">&gt;&gt;</span> 。</li>
                 <li>从普通模式进入插入模式到离开插入模式间所有的按键操作整个作为一次改动。</li>
@@ -140,20 +140,43 @@
 
             <!-- Tip 7 -->
             <article id="tip-7">
-              <h4>备忘七</h4>
-              <p></p>
+              <h4>备忘七、休息时请离开你的画布</h4>
+              <p>Vim 的默认模式为普通模式，对于习惯了其他编辑器的人来说，这有点奇怪，但是对于 Vim 的熟练工来说，如果默认模式不是普通模式的话会是难以想象的事情。</p>
+              <p>具体请参见我在开头就提到的关于绘画的<a href="#painting-analogy">类比</a>。</p>
             </article>
 
             <!-- Tip 8 -->
             <article id="tip-8">
-              <h4>备忘八</h4>
-              <p></p>
+              <h4>备忘八、撤销改动</h4>
+              <p><span class="command">u</span> 是 Vim 的撤销命令，它撤销最近的一次改动。这里不得不再次提到<a href="#tip-1-change">什么是改动</a>？</p>
+              <p>为方便和完整起见，重述如下：</p>
+              <ol>
+                <li>任何从普通模式，可视模式以及命令行模式下发起的一次命令都算作一次改动。</li>
+                <li>从进入插入模式到离开之间的任何输入或删除都算作一次改动。</li>
+              </ol>
+              <p>由于 Vim 的这一特性，其撤销操作是可自定义的。比如你什么时候离开插入模式完全由你决定。关于这一点，我们还可以多说一些，一个比较好的习惯就是在你写完一句话或一段话的时候离开插入模式。通常的规则就是，当你想停下来一会儿，而这一会儿的时间又足够你问自己这样一个问题：我该离开插入模式吗？那么别犹豫了，回到普通模式吧。</p>
+              <p class="attention">注意：在插入模式下移动光标将重置改动，这就好像回到普通模式下用命令 <span class="command">h</span>，<span class="command">j</span>，<span class="command">k</span>，<span class="command">l</span> 来移动后再次进入插入模式。</p>
+
             </article>
 
             <!-- Tip 9 -->
             <article id="tip-9">
-              <h4>备忘九</h4>
-              <p></p>
+              <h4>备忘九、组织改动以便重复</h4>
+              <p>还是那句老话，想要充分利用句点命令的作用，常常需要一些预见和思考。</p>
+              <p>看一个例子，比如说我们要删除一个单词，而光标恰好处于这个单词的最后一个字母上，有多少种办法可以达到目的呢？<p>
+              <ol>
+                <li>向后删除 <span class="command">db</span> 接着 <span class="command">x</span></li>
+                <li>向前删除 <span class="command">b</span> 接着 <span class="command">dw</span></li>
+                <li>删除整个单词 <span class="command">daw</span></li>
+              </ol>
+              <p>这三种方案看起来都需要三次按键，但它们的效率相同吗？这视情况而定，比如说我们需要再删除此时最后一个单词，听起来有点熟悉，重复最后一次改动，嗯，句点命令来重复，但是它在三种情况下都等价吗？当然不是。分别来看这三种情况：</p>
+              <ol>
+                <li>此时 <span class="command">.</span> 相当于 <span class="command">x</span>，似乎没什么意义。</li>
+                <li>此时 <span class="command">.</span> 相当于 <span class="command">dw</span>，还不错，但首先还需要一次定位。</li>
+                <li>此时 <span class="command">.</span> 相当于 <span class="command">daw</span>，哇！这个谁用谁知道。<a download="tip-3.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-9.txt">tip-9.txt</a></li>
+              </ol>
+              <p>因此，有时候，句点命令并不是那么显而易见的，你还需要去组织一个可重复的模式。</p>
+              <p>本备忘用到的命令，具体参见 <span class="command">:h b</span> 和 <span class="command">:h aw</span>。</p>
             </article>
 
             <!-- Tip 10 -->
