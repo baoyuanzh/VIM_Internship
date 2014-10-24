@@ -173,7 +173,7 @@
               <ol>
                 <li>此时 <span class="command">.</span> 相当于 <span class="command">x</span>，似乎没什么意义。</li>
                 <li>此时 <span class="command">.</span> 相当于 <span class="command">dw</span>，还不错，但首先还需要一次定位。</li>
-                <li>此时 <span class="command">.</span> 相当于 <span class="command">daw</span>，哇！这个谁用谁知道。<a download="tip-3.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-9.txt">tip-9.txt</a></li>
+                <li>此时 <span class="command">.</span> 相当于 <span class="command">daw</span>，哇！这个谁用谁知道。<a download="tip-9.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-9.txt">tip-9.txt</a></li>
               </ol>
               <p>因此，有时候，句点命令并不是那么显而易见的，你还需要去组织一个可重复的模式。</p>
               <p>本备忘用到的命令，具体参见 <span class="command">:h b</span> 和 <span class="command">:h aw</span>。</p>
@@ -181,13 +181,22 @@
 
             <!-- Tip 10 -->
             <article id="tip-10">
-              <h4>备忘十</h4>
-              <p></p>
+              <h4>备忘十、用计数做简单的算术</h4>
+              <p>大部份普通模式下的命令都可以用计数去规定它执行的次数，具体参见 <span class="command">:h count</span>。</p>
+              <p>这里主要介绍两个命令：</p>
+              <dl>
+                <dt><span class="command">&lt;Ctrl-a&gt;</span> 具体参见 <span class="command">:h ctrl-a</span></dt>
+                <dd>对本行中光标下或后面的数字做加法，默认加一，如果给出计数，则加上该计数。</dd>
+                <dt><span class="command">&lt;Ctrl-x&gt;</span> 具体参见 <span class="command">:h ctrl-x</span></dt>
+                <dd>对本行中光标下或后面的数字做减法，默认减一，如果给出计数，则减去该计数。</dd>
+              </dl>
+              <p class="attention">注意 Vim 对数字格式的控制，默认情况下，数字前如果带有 0，则按照八进制做加减法。如果这不是你想要的，你需要用 <span class="command">set nrformats=</span> 来改变这种行为，使 Vim 对任何数字都按照十进制做加减法。可以使用 <span class="command">:set nrformats?</span> 来查看当前设置。更多请参考 <span class="command">:h nrformats</span>。</p>
+              <p>下载 <a download="tip-10.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-10.txt">tip-10.txt</a> 试一试吧！</p>
             </article>
 
             <!-- Tip 11 -->
             <article id="tip-11">
-              <h4>备忘十一</h4>
+              <h4>备忘十一、要是能重复，计数就要再考虑考虑了</h4>
               <p></p>
             </article>
 
