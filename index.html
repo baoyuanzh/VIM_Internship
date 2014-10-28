@@ -226,7 +226,7 @@
             <p>把上表中的删除操作命令 <span class="command">d</span> 换成其他的操作，如 <span class="command">c</span> 和 <span class="command">y</span> 等代入，同样可以和不同的移动命令组合成不同的行动。因此，只要知道了一些操作命令和一些移动命令，其实你只要将它们交叉组合，就已经知道“一些×一些”那么多的命令了，更多关于操作命令和移动命令的内容可以参考 <span class="command">:h operator</span>  ，整个帮助与移动命令有关。</p>
             <p>最后再补充一条规则，将操作命令重复按两次，等于将该操作应用于整行。</p>
             <blockquote class="attention">操作 + 同一操作 = 把该操作应用于整行</blockquote>
-            <p>比如 <span class="command">gugu</span> 将把整行的字母大写化，是的，<span class="command">gu</span> 是一个操作命令。</p>
+            <p>比如 <span class="command">gUgU</span> 将把整行的字母大写化，是的，<span class="command">gU</span> 是一个操作命令。</p>
             <p class="remark">关于操作悬挂模式：其实除了<a href="#p1-modes">本节</a>开头提到的几种主要模式外，Vim 还有其他一些模式，比如这里我们要提到的“操作悬挂模式”。该模式指的是这样一个状态，即它只接受移动命令，当我们输入操作命令后，操作悬挂模式被激活，但是什么改动也没发生，它等待移动命令来完整这一个操作，然后执行改动。在操作悬挂模式激活的状态下，我们同样可以只用 <span class="command">Esc</span> 来退回普通模式，即放弃操作。</p>
             <p class="remark">当然了，有很多命令也需要多次按键才能完整，但是它们与操作悬挂模式不同，多数情况下，第一个按键只相当于是第二个按键的前缀，比如 <span class="command">g</span>，<span class="command">z</span>，<span class="command">[</span>，<span class="command">ctrl-w</span>，用 <span class="command">:h</span> 来查看它们的意义。这些命令并不激发操作悬挂模式，之所以用多个按键来表示一个命令，你可以这样理解，其前缀提供了一个新的命名空间，使得命令的数量得以增加，仅此而已。</p>
             <p class="remark">你也许会奇怪，为了只存在于操作命令和移动命令之间那么短暂的几毫秒，为什么要专门定义这么一个模式，而其他多个按键的命令仍然归于普通模式呢。这是因为，Vim允许你自定义操作和移动，换言之，这个模式的存在，使 Vim 的命令的扩展变得极为高效，试想，自定义一个移动，它可以和所有操作命令配合得到相应的命令，定义一个操作则可以和所有移动命令结合，不用我再多说了吧。</p>
