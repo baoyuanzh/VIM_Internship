@@ -138,6 +138,7 @@
             </ol>
             <p>同样的按键在不同的模式下，可能代表了不同的命令，因此，清楚了解 Vim 当前处于什么模式之下以及如何在它们之间转换是完成各类操作的必要前提。</p>
 
+            <section id="normal-mode">
             <!-- Tip 7 -->
             <article id="tip-7">
             <h4>备忘七、休息时请离开你的画布</h4>
@@ -232,6 +233,56 @@
             <p class="remark">你也许会奇怪，为了只存在于操作命令和移动命令之间那么短暂的几毫秒，为什么要专门定义这么一个模式，而其他多个按键的命令仍然归于普通模式呢。这是因为，Vim允许你自定义操作和移动，换言之，这个模式的存在，使 Vim 的命令的扩展变得极为高效，试想，自定义一个移动，它可以和所有操作命令配合得到相应的命令，定义一个操作则可以和所有移动命令结合，不用我再多说了吧。</p>
             <p class="remark">关于自定义操作命令，可以参考 <span class="command">:h map-operator</span> ，关于如何自定义移动，则相对复杂，建议可以从 <span class="command">:h omap-info</span> 开始了解。另外，你也可以特别关注一下 <a href="https://github.com/tpope">Tim Pope</a> 和 Kana Natsuno 的<a href="https://github.com/kana/vim-textobj-user">一个项目</a>。</p>
             </article>
+            </section>
+
+            <section id="insert-mode">
+            <!-- Tip 13 -->
+            <article id="tip-13">
+            <h4>备忘十三、在插入模式下直接修正</h4>
+            <p>如果在插入模式下犯了错，我们可以立刻对其进行修正，而无需转换模式。</p>
+            <p>除了退回键可用于插入模式下的修改以外，我们还有其他一些插入模式下的命令可以用于修改。通常情况下，如果要修正的错误在单词的结尾附近，那么利用退回键删除最后的输入，然后重新输入是最快捷的，但是如果要修正的错误在单词开头呢？</p>
+            <p>专业打字员的建议是，删掉整个单词重新打一遍，试想，如果你的打字速度超过一分钟六十个，重打一遍不过只需要一秒钟。</p>
+            <p>不这么做的话，你需要切换到普通模式，定位到要修正的错误，然后修正。最后再返回插入模式。没错，你可以这么干，但这对你提高打字速度毫无帮助，而且这显然需要超过一秒的时间。我们可以在模式之间切换并不意味着我们就应该这么做。</p>
+            <p>在插入模式下，有这么几个命令值得记忆：</p>
+            <table>
+              <tr> <td>按键</td> <td>效果</td> </tr>
+              <tr> <td><span class="command">ctrl-h</span></td> <td>回删一个字符，相当于退回键。</td> </tr>
+              <tr> <td><span class="command">ctrl-w</span></td> <td>回删一个单词。</td> </tr>
+              <tr> <td><span class="command">ctrl-u</span></td> <td>回删至本行的开头。</td> </tr>
+            </table>
+            </article>
+            
+            <!-- Tip 14 -->
+            <article id="tip-14">
+            <h4>备忘十四、回到普通模式</h4>
+            <p>尽管我们最长停留在普通模式，但是不管怎么样，插入模式只为一件任务而生，那就是输入文字。因此知道如何在这两者之间切换，并且快速切换显得至关重要。</p>
+            <p>经典的方式当然是利用 <span class="command">Esc</span> 键，但是在大多数键盘上，这就像是一次长途旅行一样让人疲惫不堪，替换的方案是利用 <span class="command">ctrl-[</span> 来达到一模一样的效果，在 Vim 中该命令等同于 <span class="command">Esc</span> 。</p>
+            <p>此外，我们也许常常会碰到这样一个情景，即在插入模式，我们需要进入普通模式以便触发一个普通模式下地命令，然后回到原地方继续输入。Vim 对此有一个绝佳的解决方案，简直帅呆了酷毙了。</p>
+            <p>这就是所谓的“插入普通模式”，该模式给我们触发一个普通模式下命令的机会，执行完该命令后自动回到原处进入插入模式。你只要在插入模式下按 <span class="command">ctrl-o</span> 就激发了该模式。来看个例子。</p>
+            <p>我们在输入时，光标下移，然而整个文件的各行是不动的，除非光标已触底仍要继续向下，这时文件上移一行，但我们往往希望，光标能居于屏幕中央，以便我们的视线可以兼顾到上下文，<span class="command">zz</span> 命令为此而生，然而我们需要进入普通模式才行，但现在有了 <span class="command">ctrl-o</span> ，一切水到渠成，在插入模式下按 <span class="command">ctrl-o zz</span> 便到达了目的，随后紧接着，你就又可以继续输入了。</p>
+            </article>
+
+            <!-- Tip 15 -->
+            <article id="tip-15">
+            <h4>备忘十五、</h4>
+            </article>
+            <!-- Tip 16 -->
+            <article id="tip-16">
+            <h4>备忘十六、</h4>
+            </article>
+            <!-- Tip 17 -->
+            <article id="tip-17">
+            <h4>备忘十七、</h4>
+            </article>
+            <!-- Tip 18 -->
+            <article id="tip-18">
+            <h4>备忘十八、</h4>
+            </article>
+            <!-- Tip 19 -->
+            <article id="tip-19">
+            <h4>备忘十九、</h4>
+            </article>
+            </section>
 
             </section>
 
