@@ -264,11 +264,19 @@
 
             <!-- Tip 15 -->
             <article id="tip-15">
-            <h4>备忘十五、</h4>
+            <h4>备忘十五、插入模式下从寄存器粘贴</h4>
+            <p>复制和粘贴操作通常都是在普通模式下进行，对了，说句题外话，在 Vim 中其实复制更准确的应该说是抽取 (yank) ，对应的命令是 <span class="command">y</span> ，粘贴应该说是放置 (put) ，对应的命令是 <span class="command">p</span> 。但是有时候，我们也许想在插入模式下直接粘贴一些文本。<p>
+            <p><span class="command">&lt;ctrl-r&gt;{寄存器名称}</span> 命令就是为此而设计的。</p>
+            <p>该命令在插入模式下，将指定的寄存器存储的内容粘贴到光标当前位置下。需要注意的是，这个命令一般只适用于少量内容，因为如果 Vim 的 'textwidth' 和 'autoindent' 开启的话，有可能引起你所不期望的截断与缩进。这是因为当我们将寄存器的内容在插入模式下往出粘贴的时候，实际就好像是我们一个字符一个字符地从键盘输入的，因而，除了上述副作用外，你还可能会注意到少许的延时现象。<br />更多内容请参考 <span class="command">:h i_ctrl-r</span> 。</p>
+            <p><span class="command">&lt;ctrl-r&gt;&lt;ctrl-p&gt;{寄存器名称}</span> 会稍微聪明一些，它在粘贴时只按原文照搬，同时修复非预期的缩进。请参考 <span class="command">:h i_ctrl-r_ctrl-p</span> 。</p>
+            <p>具体应用场景可以下载 <a download="tip-15.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-15.txt">tip-15.txt</a> 尝试。</p>
             </article>
             <!-- Tip 16 -->
             <article id="tip-16">
-            <h4>备忘十六、</h4>
+            <h4>备忘十六、简单计算并插入结果</h4>
+            <p>如果在备忘十五中你查看了 <span class="command">:h i_ctrl-r</span> ，那么你可能会注意到一个比较有意思的寄存器 &mdash; 表达式寄存器 (expression register) 。这是干啥用的呢？简单说，就是你可以输入一个表达式，让 Vim 来替你计算，然后在文本中插入计算所得的结果。</p>
+            <p>比如说，你正输入一张表格，第一列是物品，第二列是数量，第三列是单价，最后你发现，加上第四列该物品总价是个不错的主意时，你就会发现表达寄存器是个不错的玩意了。要不试试 <a download="tip-16.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-16.txt">tip-16.txt</a> 。<p>
+            <p>说半天没讲这个命令长什么样，记住是这样的 <span class="command">&lt;ctrl-r&gt;=</span> ，还没完，这时 Vim 将激发表达式寄存器，注意屏幕左下角，你现在可以输入要计算的表达式了，完成后请按回车键。注意该表达式并不仅仅限于算术运算。</p>
             </article>
             <!-- Tip 17 -->
             <article id="tip-17">
