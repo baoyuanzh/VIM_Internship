@@ -1,0 +1,21 @@
+尝试输入以下文字
+
+internationalization is a long word, which is usually abbreviated to i18n,
+where 18 stands for the number of letters between the first i and last n
+in internationalization. internationalization is the process of designing
+a software application. For internationalization, UTC is often used internally
+and then converted.  Oh, I hate to input the word internationalization,
+another internationalization, are you kidding me?
+
+在这里输入
+
+
+没错， internationalization 一共出现了六次，是不是发现每次输入这个词都有种冲动想骂人。
+所以他们自己也发明了 i18n 这种东西。不过我听说德语还有更变态的。
+
+下面试试这样输入，先输入一个 internationalization ，然后 Esc 回普通模式 yaw 复制，
+A 返回插入模式接着输入，以后每遇到一次 internationalization ，就用 <ctrl-r>0 粘贴一次。
+
+再试一次
+
+是不是感觉轻松好多。
