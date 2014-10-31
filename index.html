@@ -138,7 +138,9 @@
             </ol>
             <p>同样的按键在不同的模式下，可能代表了不同的命令，因此，清楚了解 Vim 当前处于什么模式之下以及如何在它们之间转换是完成各类操作的必要前提。</p>
 
+            <!-- Normal mode -->
             <section id="normal-mode">
+
             <!-- Tip 7 -->
             <article id="tip-7">
             <h4>备忘七、休息时请离开你的画布</h4>
@@ -235,7 +237,9 @@
             </article>
             </section>
 
+            <!-- Insert mode -->
             <section id="insert-mode">
+            
             <!-- Tip 13 -->
             <article id="tip-13">
             <h4>备忘十三、在插入模式下直接修正</h4>
@@ -271,6 +275,7 @@
             <p><span class="command">&lt;ctrl-r&gt;&lt;ctrl-p&gt;{寄存器名称}</span> 会稍微聪明一些，它在粘贴时只按原文照搬，同时修复非预期的缩进。请参考 <span class="command">:h i_ctrl-r_ctrl-p</span> 。</p>
             <p>具体应用场景可以下载 <a download="tip-15.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-15.txt">tip-15.txt</a> 尝试。</p>
             </article>
+            
             <!-- Tip 16 -->
             <article id="tip-16">
             <h4>备忘十六、简单计算并插入结果</h4>
@@ -278,14 +283,33 @@
             <p>比如说，你正输入一张表格，第一列是物品，第二列是数量，第三列是单价，最后你发现，加上第四列该物品总价是个不错的主意时，你就会发现表达寄存器是个不错的玩意了。要不试试 <a download="tip-16.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-16.txt">tip-16.txt</a> 。<p>
             <p>说半天没讲这个命令长什么样，记住是这样的 <span class="command">&lt;ctrl-r&gt;=</span> ，还没完，这时 Vim 将激发表达式寄存器，注意屏幕左下角，你现在可以输入要计算的表达式了，完成后请按回车键。注意该表达式并不仅仅限于算术运算。</p>
             </article>
+            
             <!-- Tip 17 -->
             <article id="tip-17">
-            <h4>备忘十七、</h4>
+            <h4>备忘十七、用字码输入特殊字符</h4>
+            <p>Vim 可以用字码来输入任何字符，这对于输入一些键盘上找不到的字符是极为方便的。在插入模式下，我们可以用 <span class="command">&lt;ctrl-v&gt;{最多三位十进制字码}</span> 来实现这一目的。<p>
+            <p>比如我们想输入大写字母 A ，它的字码是65，于是我们就可以用 <span class="command">&lt;ctrl-v&gt;065</span> 来输入。</p>
+            <p>但是如果我们想输入的字符的字码多于三位数怎么办呢？别急，我们还有十六进制表达法，具体如下， <span class="command">&lt;ctrl-v&gt;u{最多四位十六进制字码}</span> ，注意到四位十六进制字码前置的 u ，这样的表达方式下，其可以表达的字符数达到 65536 个，这样就大概覆盖了基本的 Unicode 字符集。比如我们想输入 ¿ 。就可以用 <span class="command">&lt;ctrl-v&gt;u00bf</span> 。更多内容可以参考 <span class="command">:h i_ctrl-v_digit</span> 。</p>
+            <p class="remark">最后值得一提的是，如果 <span class="command">&lt;ctrl-v&gt;</span> 后如果紧接着一个非数字按键，那么 Vim 将保证输入该按键代表的字符，比如说，在 expandtab 选项启用时，我们直接键入的 Tab 键将被转换为对应的空格，而有时候，这不是我们想要的，比如说，makefile 就要求必须输入 Tab ，这时我们就可以 <span class="command">&lt;ctrl-v&gt;&lt;Tab&gt;</span> 这样输入 Tab，Vim 保证输入的 Tab 不会被 expandtab 解释成空格。</p>
+            <p>总结一下：</p>
+            <table>
+              <tr> <th>按键</th> <th>例子</th> <th>输入字符</th> </tr>
+              <tr> <td>&lt;ctrl-v&gt;{最多三位十进制字码}</td> <td>&lt;ctrl-v&gt;165</td> <td>¥</td> </tr>
+              <tr> <td>&lt;ctrl-v&gt;u{最多四位十六进制字码}</td> <td>&lt;ctrl-v&gt;u00a5</td> <td>¥</td> </tr>
+              <tr> <td>&lt;ctrl-v&gt;{非数字按键}</td> <td>&lt;ctrl-v&gt;$</td> <td>$</td></tr>
+            </table>
+            <p>小技巧，如果你想要知道某个字符的字码，可以将光标移动到这个字符上，然后用 <span class="command">ga</span> 去查看十进制、十六进制和八进制的字码。当然这技巧可能并不大实用。如果你想要输入的字符不在文本中，而你又不知道其字码，那么大概你只能去 Unicode 字符集上查找了。</p>
             </article>
+            
             <!-- Tip 18 -->
             <article id="tip-18">
-            <h4>备忘十八、</h4>
+            <h4>备忘十八、用复合字母来输入特殊字符</h4>
+            <p>用字码来输入字符的优点是你大概可以输入任何可以打印的字符，缺点是难以记忆。</p>
+            <p>vim 为此提供了另一种方案来输入一些你可能常用的又不在键盘上的字符，该方案用一对复合字母来表达特殊字符，命令为 <span class="command">&lt;ctrl-k&gt;&lt;字母&gt;&lt;字母&gt;</span> 。这里字母的意义有扩大，并不局限于二十六个英文字母。</p>
+            <p>比如本人<abbr title="Fri Oct 31 23:42:40 CET 2014">目前</abbr>还在维护另一个关于法语语法的项目，就经常遇到需要输入法语中一些比较特殊的字符的问题，比如 ê œ à é ö 等等，如果用切换输入法的话，本来在 Vim 里用中文就已经够麻烦的了，再加上法语输入，Oh~là~~à~~~，c'est pas vrai. 因此，我花了一点时间记忆这些特殊字母，因为不是很多而且是有规律的，我没有花两分钟大概就基本记住了，接下来再维护这个项目时就轻松多了。</p>
+            <p>你可以用 <span class="command">:h digraph-table</span> 来查找在 Vim 中能够用复合字母表示的字符。</p>
             </article>
+            
             <!-- Tip 19 -->
             <article id="tip-19">
             <h4>备忘十九、</h4>
