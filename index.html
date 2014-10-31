@@ -308,6 +308,15 @@
             <p>vim 为此提供了另一种方案来输入一些你可能常用的又不在键盘上的字符，该方案用一对复合字母来表达特殊字符，命令为 <span class="command">&lt;ctrl-k&gt;&lt;字母&gt;&lt;字母&gt;</span> 。这里字母的意义有扩大，并不局限于二十六个英文字母。</p>
             <p>比如本人<abbr title="Fri Oct 31 23:42:40 CET 2014">目前</abbr>还在维护另一个关于法语语法的项目，就经常遇到需要输入法语中一些比较特殊的字符的问题，比如 ê œ à é ö 等等，如果用切换输入法的话，本来在 Vim 里用中文就已经够麻烦的了，再加上法语输入，Oh~là~~à~~~，c'est pas vrai. 因此，我花了一点时间记忆这些特殊字母，因为不是很多而且是有规律的，我没有花两分钟大概就基本记住了，接下来再维护这个项目时就轻松多了。</p>
             <p>你可以用 <span class="command">:h digraph-table</span> 来查找在 Vim 中能够用复合字母表示的字符。</p>
+            <p>上面提到的例子：</p>
+            <table>
+              <tr> <th>输入字符</th> <th>按键</th> </tr>
+              <tr> <td>ê</td> <td>&lt;ctrl-k&gt;e&gt;</td> </tr>
+              <tr> <td>œ</td> <td>&lt;ctrl-k&gt;oe</td> </tr>
+              <tr> <td>à</td> <td>&lt;ctrl-k&gt;a!</td> </tr>
+              <tr> <td>é</td> <td>&lt;ctrl-k&gt;e'</td> </tr>
+              <tr> <td>ö</td> <td>&lt;ctrl-k&gt;o:</td> </tr>
+            </table>
             </article>
             
             <!-- Tip 19 -->
