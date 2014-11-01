@@ -29,9 +29,12 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
 
-        <!-- Main Contents -->
+        <!-- Main Contents: BEGIN -->
         <section id="main-content">
+
+        <!-- Introduction: BEGIN -->
         <section class="intro">
+
         <h3>欢迎来到我的 &laquo;VIM 实习生&raquo;</h3>
         <p>几年前偶尔接触了 Vim ，同时听说了 Emacs ，之后便断断续续的开始自学 Vim ，资料找过不少，看了忘忘了又看，发现 Vim 水平没提高多少，依然只会用简单的几个命令，连寄存器都没怎么用过，更别说什么宏啊，映射啊，折叠啊之类听起来就高大上的东西。有问题的时候就上网查一下，用过之后就忘记了，又要用就又去查，其实心里面一直觉得老这么着也不是个事啊，但还是这么着又过了段时间，大概觉得也许是 Vim 不适合我，所以就去尝试了 Emacs ，用了一段时间觉得要记得命令太多，而且多是组合键，哪怕是改了键盘 Tab 键也不适应，最后又不了了之了。</p>
         <p id="painting-analogy">终于有一天，在一本书上我读到了这么一段话，当然了，是我翻译过的 : )</p>
@@ -44,10 +47,12 @@
         <p>所谓独乐乐不如众乐乐，我将其在本站公布，同时作为我学习 HTML&amp;CSS 建设的第一个网站</p>
         <p>本网站的内容将全部通过 Vim 录入，更准确地说，通过我 Macbook Pro 上的 mvim 与 vim 录入。</p>
 
+        <!-- Introduction: END -->
         </section>
 
-        <!-- Part 0: The Vim Way -->
+        <!-- Part 0: The Vim Way: BEGIN -->
         <section class="p0-way">
+
         <h3>我们都是 VIM 派</h3>
         <p>说实话，编辑工作从某种角度下看，其本质是重复的。那么简化这种重复的工作绝对可以大量的节约时间，虽然不是根本性的，但却是多方面的。</p>
         <p>Vim 尤其善于处理重复，因为其自动为我们记录下最近的操作，我们总可以用一个句点来重复。为了最高效的利用这一特性，我们有着一个理想化的公式，即所谓的<b>句点公式</b>：</p>
@@ -79,321 +84,396 @@
           <li> <span class="command">S</span> = <span class="command">^ C</span> </li>
           <li> <span class="command">I</span> = <span class="command">^ i</span> </li>
           <li> <span class="command">A</span> = <span class="command">$ a</span> </li>
-          <li> <span class="command">o</span> = <span class="command">A [Enter]<span> </li>
-              <li> <span class="command">O</span> = <span class="command">k o</span> </li>
-            </ul>
-            <p>下载文件 <a download="tip-2.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-2.txt">tip-2.txt</a> 尝试一下吧。<p>
-            </article>
+          <li> <span class="command">o</span> = <span class="command">A [Enter]</span> </li>
+          <li> <span class="command">O</span> = <span class="command">k o</span> </li>
+        </ul>
+        <p>下载文件 <a download="tip-2.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-2.txt">tip-2.txt</a> 尝试一下吧。<p>
+        </article>
 
-            <!-- Tip 3 -->
-            <article id="tip-3">
-            <h4>备忘三、退一步，海阔天空</h4>
-            <p>为了重复时节省力气，在第一次操作的时候偶尔可以牺牲一下，比如说我们想在某个特定的字符前后加入空格，我们可以定位到这个字符然后按下 <span class="command">i</span> 键进入插入模式插入空格，但是后面的空格怎么办呢，在插入模式下，光标是不能移动的，即使使用左右方向键移动到那个字符后面加入空格完成了整个操作也是没用的，因为在你按下方向键的那一刻，改动已经终止，当你再次回到普通模式下，按下句点 <span class="command">.</span> 时你会发现，它只在光标前加入了一个空格，而光标后面没有任何改变，至于为什么是这样，我还在学习中，如果你知道请<a href="mailto:baoyuan.zh@gmail.com">邮件</a>联系我，或者在我 Github 的项目创建一个 <a href="https://github.com/baoyuanzh/VIM_Internship/issues/new">issue</a> 。</p>
-            <p>事实上在插入模式下来移动光标是不推荐的，因为这样会引起一系列的副作用。更为合理的做法是利用替换命令 <span class="command">s</span> ，该命令将删除当前光标下地字符然后进入插入模式等待输入，这时你就可以完成改动，再回到普通模式了，这样一来，最后一次改动就是在特定的字符前后加入空格了，接着我们就可以放心大胆的定位到下一个特定字符，通过句点命令来重复操作了。</p>
-            <p>从这个例子可以看到，有时候光是想要利用这个句点命令来方便重复操作，其本身就要费不少心思的，但是相信我，你一定会得到回报的。不信，那你下载文件 <a download="tip-3.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-3.txt">tip-3.txt</a> 试试吧。内有惊喜，如果你乐意学习。<p>
-            </article>
+        <!-- Tip 3 -->
+        <article id="tip-3">
+        <h4>备忘三、退一步，海阔天空</h4>
+        <p>为了重复时节省力气，在第一次操作的时候偶尔可以牺牲一下，比如说我们想在某个特定的字符前后加入空格，我们可以定位到这个字符然后按下 <span class="command">i</span> 键进入插入模式插入空格，但是后面的空格怎么办呢，在插入模式下，光标是不能移动的，即使使用左右方向键移动到那个字符后面加入空格完成了整个操作也是没用的，因为在你按下方向键的那一刻，改动已经终止，当你再次回到普通模式下，按下句点 <span class="command">.</span> 时你会发现，它只在光标前加入了一个空格，而光标后面没有任何改变，至于为什么是这样，我还在学习中，如果你知道请<a href="mailto:baoyuan.zh@gmail.com">邮件</a>联系我，或者在我 Github 的项目创建一个 <a href="https://github.com/baoyuanzh/VIM_Internship/issues/new">issue</a> 。</p>
+        <p>事实上在插入模式下来移动光标是不推荐的，因为这样会引起一系列的副作用。更为合理的做法是利用替换命令 <span class="command">s</span> ，该命令将删除当前光标下地字符然后进入插入模式等待输入，这时你就可以完成改动，再回到普通模式了，这样一来，最后一次改动就是在特定的字符前后加入空格了，接着我们就可以放心大胆的定位到下一个特定字符，通过句点命令来重复操作了。</p>
+        <p>从这个例子可以看到，有时候光是想要利用这个句点命令来方便重复操作，其本身就要费不少心思的，但是相信我，你一定会得到回报的。不信，那你下载文件 <a download="tip-3.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-3.txt">tip-3.txt</a> 试试吧。内有惊喜，如果你乐意学习。<p>
+        </article>
 
-            <!-- Tip 4 -->
-            <article id="tip-4">
-            <h4>备忘四、执行、重复、撤销</h4>
-            <p>重复的操作，用太嗨了给用过头了怎么办？你一定会遇到这种情况，比如多按了一次句点命令，或者连着定位了两次，又或者漏了用句点命令重复，等等。<p>
-            <p>Vim 已经考虑到这种状况，因此对于一般的定位，执行和重复操作都设定了相应的撤销命令，具体的可以参考下表。</p>
-            <table>
-              <tr> <th>目的</th> <th>执行</th> <th>重复</th> <th>撤销</th> </tr>
-              <tr> <td>改动</td> <td>一般的编辑操作</td> <td><span class="command">.</span></td> <td><span class="command">u</span></td> </tr>
-              <tr> <td>搜索定位一行中光标后的某个字符</td> <td>f{某个字符} 或 t{某个字符}</td> <td><span class="command">;</span></td> <td><span class="command">,</span></td> </tr>
-              <tr> <td>搜索定位一行中光标前的某个字符</td> <td>F{某个字符} 或 T{某个字符}</td> <td><span class="command">;</span></td> <td><span class="command">,</span></td> </tr>
-              <tr> <td>搜索定位文件中光标后的某个模式匹配</td> <td>/模式[enter]</td> <td><span class="command">n</span></td> <td><span class="command">N</span></td> </tr>
-              <tr> <td>搜索定位文件中光标前的某个模式匹配</td> <td>?模式[enter]</td> <td><span class="command">n</span></td> <td><span class="command">N</span></td> </tr>
-              <tr> <td>替换某个模式匹配</td> <td>:s/模式匹配/替换模式</td> <td><span class="command">&amp;</span></td> <td><span class="command">u</span></td> </tr>
-              <tr> <td>执行一系列改动</td> <td>qx{一系列改动}q</td> <td><span class="command">@x</span></td> <td><span class="command">u</span></td> </tr>
-            </table>
-            </article>
+        <!-- Tip 4 -->
+        <article id="tip-4">
+        <h4>备忘四、执行、重复、撤销</h4>
+        <p>重复的操作，用太嗨了给用过头了怎么办？你一定会遇到这种情况，比如多按了一次句点命令，或者连着定位了两次，又或者漏了用句点命令重复，等等。<p>
+        <p>Vim 已经考虑到这种状况，因此对于一般的定位，执行和重复操作都设定了相应的撤销命令，具体的可以参考下表。</p>
+        <table>
+          <tr> <th>目的</th> <th>执行</th> <th>重复</th> <th>撤销</th> </tr>
+          <tr> <td>改动</td> <td>一般的编辑操作</td> <td><span class="command">.</span></td> <td><span class="command">u</span></td> </tr>
+          <tr> <td>搜索定位一行中光标后的某个字符</td> <td>f{某个字符} 或 t{某个字符}</td> <td><span class="command">;</span></td> <td><span class="command">,</span></td> </tr>
+          <tr> <td>搜索定位一行中光标前的某个字符</td> <td>F{某个字符} 或 T{某个字符}</td> <td><span class="command">;</span></td> <td><span class="command">,</span></td> </tr>
+          <tr> <td>搜索定位文件中光标后的某个模式匹配</td> <td>/模式[enter]</td> <td><span class="command">n</span></td> <td><span class="command">N</span></td> </tr>
+          <tr> <td>搜索定位文件中光标前的某个模式匹配</td> <td>?模式[enter]</td> <td><span class="command">n</span></td> <td><span class="command">N</span></td> </tr>
+          <tr> <td>替换某个模式匹配</td> <td>:s/模式匹配/替换模式</td> <td><span class="command">&amp;</span></td> <td><span class="command">u</span></td> </tr>
+          <tr> <td>执行一系列改动</td> <td>qx{一系列改动}q</td> <td><span class="command">@x</span></td> <td><span class="command">u</span></td> </tr>
+        </table>
+        </article>
 
-            <!-- Tip 5 -->
-            <article id="tip-5">
-            <h4>备忘五、手动搜索与替换</h4>
-            <p>一般搜索以命令 <span class="command">/</span> 或者 <span class="command">?</span> 发起，但有时后如果光标恰好置于要搜索的文字上时，可以直接用命令 <span class="command">*</span> 来方便操作。具体见 <span class="command">:h *</span> 。</p>
-            <p>想想看，有了这一命令，再结合重复操作 <span class="command">n</span> 以及撤销操作 <span class="command">N</span> ，它们就构成了完整的移动命令，方便你定位到需要改动的地方，再次以句点命令重复上一次改动。</p>
-            </article>
+        <!-- Tip 5 -->
+        <article id="tip-5">
+        <h4>备忘五、手动搜索与替换</h4>
+        <p>一般搜索以命令 <span class="command">/</span> 或者 <span class="command">?</span> 发起，但有时后如果光标恰好置于要搜索的文字上时，可以直接用命令 <span class="command">*</span> 来方便操作。具体见 <span class="command">:h *</span> 。</p>
+        <p>想想看，有了这一命令，再结合重复操作 <span class="command">n</span> 以及撤销操作 <span class="command">N</span> ，它们就构成了完整的移动命令，方便你定位到需要改动的地方，再次以句点命令重复上一次改动。</p>
+        </article>
 
-            <!-- Tip 6 -->
-            <article id="tip-6">
-            <h4>备忘六、句点公式</h4>
-            <p>总结一下，从备忘一到备忘五，它们都有一个统一的模式，即<em>一键移动，一键操作</em>。为了强化记忆我们将之称为<em>句点公式</em>。这在 Vim 来说是理想化的，试想还能有比这更简洁的方案吗？没有。</p>
-            <p>再次强调，这一思想将贯穿于整个 Vim 的设计。</p>
-            </article>
+        <!-- Tip 6 -->
+        <article id="tip-6">
+        <h4>备忘六、句点公式</h4>
+        <p>总结一下，从备忘一到备忘五，它们都有一个统一的模式，即<em>一键移动，一键操作</em>。为了强化记忆我们将之称为<em>句点公式</em>。这在 Vim 来说是理想化的，试想还能有比这更简洁的方案吗？没有。</p>
+        <p>再次强调，这一思想将贯穿于整个 Vim 的设计。</p>
+        </article>
 
-            </section>
+        <!-- Part 0: The Vim Way: END -->
+        </section>
 
-            <!-- Part 1: Modes -->
-            <section id="p1-modes">
-            <h3>VIM 的几种模式</h3>
-            <p>Vim 有以下几种模式：</p>
-            <ol>
-              <li>普通模式 —— Normal Mode</li>
-              <li>插入模式 —— Insert Mode</li>
-              <li>可视模式 —— Visual Mode</li>
-              <li>命令行模式 —— Command-Line Mode</li>
-            </ol>
-            <p>同样的按键在不同的模式下，可能代表了不同的命令，因此，清楚了解 Vim 当前处于什么模式之下以及如何在它们之间转换是完成各类操作的必要前提。</p>
+        <!-- Part 1: Modes: BEGIN -->
+        <section id="p1-modes">
 
-            <!-- Normal mode -->
-            <section id="normal-mode">
+        <h3>VIM 的几种模式</h3>
+        <p>Vim 有以下几种模式：</p>
+        <ol>
+          <li>普通模式 —— Normal Mode</li>
+          <li>插入模式 —— Insert Mode</li>
+          <li>可视模式 —— Visual Mode</li>
+          <li>命令行模式 —— Command-Line Mode</li>
+        </ol>
+        <p>同样的按键在不同的模式下，可能代表了不同的命令，因此，清楚了解 Vim 当前处于什么模式之下以及如何在它们之间转换是完成各类操作的必要前提。</p>
 
-            <!-- Tip 7 -->
-            <article id="tip-7">
-            <h4>备忘七、休息时请离开你的画布</h4>
-            <p>Vim 的默认模式为普通模式，对于习惯了其他编辑器的人来说，这有点奇怪，但是对于 Vim 的熟练工来说，如果默认模式不是普通模式的话会是难以想象的事情。</p>
-            <p>具体请参见我在开头就提到的关于绘画的<a href="#painting-analogy">类比</a>。</p>
-            </article>
+        <!-- Normal mode: BEGIN -->
+        <section id="normal-mode">
 
-            <!-- Tip 8 -->
-            <article id="tip-8">
-            <h4>备忘八、撤销改动</h4>
-            <p><span class="command">u</span> 是 Vim 的撤销命令，它撤销最近的一次改动。这里不得不再次提到<a href="#tip-1-change">什么是改动</a>？</p>
-            <p>为方便和完整起见，重述如下：</p>
-            <ol>
-              <li>任何从普通模式，可视模式以及命令行模式下发起的一次命令都算作一次改动。</li>
-              <li>从进入插入模式到离开之间的任何输入或删除都算作一次改动。</li>
-            </ol>
-            <p>由于 Vim 的这一特性，其撤销操作是可自定义的。比如你什么时候离开插入模式完全由你决定。关于这一点，我们还可以多说一些，一个比较好的习惯就是在你写完一句话或一段话的时候离开插入模式。通常的规则就是，当你想停下来一会儿，而这一会儿的时间又足够你问自己这样一个问题：我该离开插入模式吗？那么别犹豫了，回到普通模式吧。</p>
-            <p class="attention">注意：在插入模式下移动光标将重置改动，这就好像回到普通模式下用命令 <span class="command">h</span>，<span class="command">j</span>，<span class="command">k</span>，<span class="command">l</span> 来移动后再次进入插入模式。</p>
+        <!-- Tip 7 -->
+        <article id="tip-7">
+        <h4>备忘七、休息时请离开你的画布</h4>
+        <p>Vim 的默认模式为普通模式，对于习惯了其他编辑器的人来说，这有点奇怪，但是对于 Vim 的熟练工来说，如果默认模式不是普通模式的话会是难以想象的事情。</p>
+        <p>具体请参见我在开头就提到的关于绘画的<a href="#painting-analogy">类比</a>。</p>
+        </article>
 
-            </article>
+        <!-- Tip 8 -->
+        <article id="tip-8">
+        <h4>备忘八、撤销改动</h4>
+        <p><span class="command">u</span> 是 Vim 的撤销命令，它撤销最近的一次改动。这里不得不再次提到<a href="#tip-1-change">什么是改动</a>？</p>
+        <p>为方便和完整起见，重述如下：</p>
+        <ol>
+          <li>任何从普通模式，可视模式以及命令行模式下发起的一次命令都算作一次改动。</li>
+          <li>从进入插入模式到离开之间的任何输入或删除都算作一次改动。</li>
+        </ol>
+        <p>由于 Vim 的这一特性，其撤销操作是可自定义的。比如你什么时候离开插入模式完全由你决定。关于这一点，我们还可以多说一些，一个比较好的习惯就是在你写完一句话或一段话的时候离开插入模式。通常的规则就是，当你想停下来一会儿，而这一会儿的时间又足够你问自己这样一个问题：我该离开插入模式吗？那么别犹豫了，回到普通模式吧。</p>
+        <p class="attention">注意：在插入模式下移动光标将重置改动，这就好像回到普通模式下用命令 <span class="command">h</span>，<span class="command">j</span>，<span class="command">k</span>，<span class="command">l</span> 来移动后再次进入插入模式。</p>
+        </article>
 
-            <!-- Tip 9 -->
-            <article id="tip-9">
-            <h4>备忘九、组织改动以便重复</h4>
-            <p>还是那句老话，想要充分利用句点命令的作用，常常需要一些预见和思考。</p>
-            <p>看一个例子，比如说我们要删除一个单词，而光标恰好处于这个单词的最后一个字母上，有多少种办法可以达到目的呢？<p>
-            <ol>
-              <li>向后删除 <span class="command">db</span> 接着 <span class="command">x</span></li>
-              <li>向前删除 <span class="command">b</span> 接着 <span class="command">dw</span></li>
-              <li>删除整个单词 <span class="command">daw</span></li>
-            </ol>
-            <p>这三种方案看起来都需要三次按键，但它们的效率相同吗？这视情况而定，比如说我们需要再删除此时最后一个单词，听起来有点熟悉，重复最后一次改动，嗯，句点命令来重复，但是它在三种情况下都等价吗？当然不是。分别来看这三种情况：</p>
-            <ol>
-              <li>此时 <span class="command">.</span> 相当于 <span class="command">x</span>，似乎没什么意义。</li>
-              <li>此时 <span class="command">.</span> 相当于 <span class="command">dw</span>，还不错，但首先还需要一次定位。</li>
-              <li>此时 <span class="command">.</span> 相当于 <span class="command">daw</span>，哇！这个谁用谁知道。<a download="tip-9.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-9.txt">tip-9.txt</a></li>
-            </ol>
-            <p>因此，有时候，句点命令并不是那么显而易见的，你还需要去组织一个可重复的模式。</p>
-            <p>本备忘用到的命令，具体参见 <span class="command">:h b</span> 和 <span class="command">:h aw</span>。</p>
-            </article>
+        <!-- Tip 9 -->
+        <article id="tip-9">
+        <h4>备忘九、组织改动以便重复</h4>
+        <p>还是那句老话，想要充分利用句点命令的作用，常常需要一些预见和思考。</p>
+        <p>看一个例子，比如说我们要删除一个单词，而光标恰好处于这个单词的最后一个字母上，有多少种办法可以达到目的呢？<p>
+        <ol>
+          <li>向后删除 <span class="command">db</span> 接着 <span class="command">x</span></li>
+          <li>向前删除 <span class="command">b</span> 接着 <span class="command">dw</span></li>
+          <li>删除整个单词 <span class="command">daw</span></li>
+        </ol>
+        <p>这三种方案看起来都需要三次按键，但它们的效率相同吗？这视情况而定，比如说我们需要再删除此时最后一个单词，听起来有点熟悉，重复最后一次改动，嗯，句点命令来重复，但是它在三种情况下都等价吗？当然不是。分别来看这三种情况：</p>
+        <ol>
+          <li>此时 <span class="command">.</span> 相当于 <span class="command">x</span>，似乎没什么意义。</li>
+          <li>此时 <span class="command">.</span> 相当于 <span class="command">dw</span>，还不错，但首先还需要一次定位。</li>
+          <li>此时 <span class="command">.</span> 相当于 <span class="command">daw</span>，哇！这个谁用谁知道。<a download="tip-9.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-9.txt">tip-9.txt</a></li>
+        </ol>
+        <p>因此，有时候，句点命令并不是那么显而易见的，你还需要去组织一个可重复的模式。</p>
+        <p>本备忘用到的命令，具体参见 <span class="command">:h b</span> 和 <span class="command">:h aw</span>。</p>
+        </article>
 
-            <!-- Tip 10 -->
-            <article id="tip-10">
-            <h4>备忘十、用计数做简单的算术</h4>
-            <p>大部份普通模式下的命令都可以用计数去规定它执行的次数，具体参见 <span class="command">:h count</span>。</p>
-            <p>这里主要介绍两个命令：</p>
-            <dl>
-              <dt><span class="command">&lt;Ctrl-a&gt;</span> 具体参见 <span class="command">:h ctrl-a</span></dt>
-              <dd>对本行中光标下或后面的数字做加法，默认加一，如果给出计数，则加上该计数。</dd>
-              <dt><span class="command">&lt;Ctrl-x&gt;</span> 具体参见 <span class="command">:h ctrl-x</span></dt>
-              <dd>对本行中光标下或后面的数字做减法，默认减一，如果给出计数，则减去该计数。</dd>
-            </dl>
-            <p class="attention">注意 Vim 对数字格式的控制，默认情况下，数字前如果带有 0，则按照八进制做加减法。如果这不是你想要的，你需要用 <span class="command">set nrformats=</span> 来改变这种行为，使 Vim 对任何数字都按照十进制做加减法。可以使用 <span class="command">:set nrformats?</span> 来查看当前设置。更多请参考 <span class="command">:h nrformats</span>。</p>
-            <p>下载 <a download="tip-10.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-10.txt">tip-10.txt</a> 试一试吧！</p>
-            </article>
+        <!-- Tip 10 -->
+        <article id="tip-10">
+        <h4>备忘十、用计数做简单的算术</h4>
+        <p>大部份普通模式下的命令都可以用计数去规定它执行的次数，具体参见 <span class="command">:h count</span>。</p>
+        <p>这里主要介绍两个命令：</p>
+        <dl>
+          <dt><span class="command">&lt;Ctrl-a&gt;</span> 具体参见 <span class="command">:h ctrl-a</span></dt>
+          <dd>对本行中光标下或后面的数字做加法，默认加一，如果给出计数，则加上该计数。</dd>
+          <dt><span class="command">&lt;Ctrl-x&gt;</span> 具体参见 <span class="command">:h ctrl-x</span></dt>
+          <dd>对本行中光标下或后面的数字做减法，默认减一，如果给出计数，则减去该计数。</dd>
+        </dl>
+        <p class="attention">注意 Vim 对数字格式的控制，默认情况下，数字前如果带有 0，则按照八进制做加减法。如果这不是你想要的，你需要用 <span class="command">set nrformats=</span> 来改变这种行为，使 Vim 对任何数字都按照十进制做加减法。可以使用 <span class="command">:set nrformats?</span> 来查看当前设置。更多请参考 <span class="command">:h nrformats</span>。</p>
+        <p>下载 <a download="tip-10.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-10.txt">tip-10.txt</a> 试一试吧！</p>
+        </article>
 
-            <!-- Tip 11 -->
-            <article id="tip-11">
-            <h4>备忘十一、要是能重复，计数就要再考虑考虑了</h4>
-            <p>像上一个备忘说过的那样，Vim 中得大多数命令都可以前置计数来控制命令执行的次数。利用这一点也可以减少按键次数。但是需要指出的是，尽管 Vim 提供了这一特性，但并不意味利用计数就一定是最佳的解决方案。看下面这个例子：</p>
-            <p>比如说我们要删除光标后面的两个单词，有以下几种可能的解决方案：</p>
-            <table>
-              <tr> <td>命令</td> <td>这个命令应该理解为：</td> </tr>
-              <tr> <td><span class="command">d2w</span></td> <td>删除后两个单词</td> </tr>
-              <tr> <td><span class="command">2dw</span></td> <td>删除一个单词，执行两次</td> </tr>
-              <tr> <td><span class="command">dw.</span></td> <td>删除一个单词然后重复</td> </tr>
-            </table>
-            <p>从上表中可以看出这些命令的意义略有不用，但却都只需要三次按键。那么哪一个才是最佳答案呢？</p>
-            <p>答案是，<span class="command">d2w</span> 和 <span class="command">2dw</span> 可以认为是等同的，但 <span class="command">dw.</span> 需要区别，究竟哪一个更好则视情况而定。比如，我实际上只需要删除第一个单词，对于前两个命令，要么撤销整个命令，然后删除一个单词，要么插入需要保留的单词，而对于最后的命令，它其实应该视作两次改动，因此我们只需要简单地撤销最后一次重复命令即可。又比如，实际上我需要删除后一个单词，要么插入需要保留的单词，那么这三个命令没有什么区别，要么撤销前面的改动重做，那么貌似，前两个命令更方便一些。</p>
-            <p>因此本备忘的结论就是，计数和重复，视情况和你的喜好来决定用哪一个。</p>
-            <p>一点经验之谈，大多数情况下，重复是更好的选择，因为大多数时候，数数也是挺无聊的不是？</p>
-            </article>
+        <!-- Tip 11 -->
+        <article id="tip-11">
+        <h4>备忘十一、要是能重复，计数就要再考虑考虑了</h4>
+        <p>像上一个备忘说过的那样，Vim 中得大多数命令都可以前置计数来控制命令执行的次数。利用这一点也可以减少按键次数。但是需要指出的是，尽管 Vim 提供了这一特性，但并不意味利用计数就一定是最佳的解决方案。看下面这个例子：</p>
+        <p>比如说我们要删除光标后面的两个单词，有以下几种可能的解决方案：</p>
+        <table>
+          <tr> <td>命令</td> <td>这个命令应该理解为：</td> </tr>
+          <tr> <td><span class="command">d2w</span></td> <td>删除后两个单词</td> </tr>
+          <tr> <td><span class="command">2dw</span></td> <td>删除一个单词，执行两次</td> </tr>
+          <tr> <td><span class="command">dw.</span></td> <td>删除一个单词然后重复</td> </tr>
+        </table>
+        <p>从上表中可以看出这些命令的意义略有不用，但却都只需要三次按键。那么哪一个才是最佳答案呢？</p>
+        <p>答案是，<span class="command">d2w</span> 和 <span class="command">2dw</span> 可以认为是等同的，但 <span class="command">dw.</span> 需要区别，究竟哪一个更好则视情况而定。比如，我实际上只需要删除第一个单词，对于前两个命令，要么撤销整个命令，然后删除一个单词，要么插入需要保留的单词，而对于最后的命令，它其实应该视作两次改动，因此我们只需要简单地撤销最后一次重复命令即可。又比如，实际上我需要删除后一个单词，要么插入需要保留的单词，那么这三个命令没有什么区别，要么撤销前面的改动重做，那么貌似，前两个命令更方便一些。</p>
+        <p>因此本备忘的结论就是，计数和重复，视情况和你的喜好来决定用哪一个。</p>
+        <p>一点经验之谈，大多数情况下，重复是更好的选择，因为大多数时候，数数也是挺无聊的不是？</p>
+        </article>
 
-            <!-- Tip 12 -->
-            <article id="tip-12">
-            <h4>备忘十二、操作与移动的结合</h4>
-            <p>Vim 非凡的效力常常来自于操作与移动的结合，这同样是贯穿于 Vim 设计的另一条主线。因此，请记住！</p>
-            <blockquote class="attention">操作命令 + 移动命令 = 行动命令（改动）</blockquote>
-            <p>比如删除 <span class="command">d</span> 是一个操作，它和不同的移动命令结合在一起最终形成不同的命令。</p>
-            <table>
-              <tr> <td>操作</td> <td>移动</td> <td>最终命令</td> <td>意义</td> </tr>
-              <tr> <td rowspan="3"><span class="command">d</span></td> <td><span class="command">l</span></td> <td><span class="command">dl</span></td> <td>删除一个字符</td> </tr>
-              <tr> <td><span class="command">aw</span></td> <td><span class="command">daw</span></td> <td>删除一个单词</td> </tr>
-              <tr> <td><span class="command">ap</span></td> <td><span class="command">dap</span></td> <td>删除一段话</td> </tr>
-            </table>
-            <p>把上表中的删除操作命令 <span class="command">d</span> 换成其他的操作，如 <span class="command">c</span> 和 <span class="command">y</span> 等代入，同样可以和不同的移动命令组合成不同的行动。因此，只要知道了一些操作命令和一些移动命令，其实你只要将它们交叉组合，就已经知道“一些×一些”那么多的命令了，更多关于操作命令和移动命令的内容可以参考 <span class="command">:h operator</span>  ，整个帮助与移动命令有关。</p>
-            <p>最后再补充一条规则，将操作命令重复按两次，等于将该操作应用于整行。</p>
-            <blockquote class="attention">操作 + 同一操作 = 把该操作应用于整行</blockquote>
-            <p>比如 <span class="command">gUgU</span> 将把整行的字母大写化，是的，<span class="command">gU</span> 是一个操作命令。</p>
-            <p class="remark">关于操作悬挂模式：其实除了<a href="#p1-modes">本节</a>开头提到的几种主要模式外，Vim 还有其他一些模式，比如这里我们要提到的“操作悬挂模式”。该模式指的是这样一个状态，即它只接受移动命令，当我们输入操作命令后，操作悬挂模式被激活，但是什么改动也没发生，它等待移动命令来完整这一个操作，然后执行改动。在操作悬挂模式激活的状态下，我们同样可以只用 <span class="command">Esc</span> 来退回普通模式，即放弃操作。</p>
-            <p class="remark">当然了，有很多命令也需要多次按键才能完整，但是它们与操作悬挂模式不同，多数情况下，第一个按键只相当于是第二个按键的前缀，比如 <span class="command">g</span>，<span class="command">z</span>，<span class="command">[</span>，<span class="command">ctrl-w</span>，用 <span class="command">:h</span> 来查看它们的意义。这些命令并不激发操作悬挂模式，之所以用多个按键来表示一个命令，你可以这样理解，其前缀提供了一个新的命名空间，使得命令的数量得以增加，仅此而已。</p>
-            <p class="remark">你也许会奇怪，为了只存在于操作命令和移动命令之间那么短暂的几毫秒，为什么要专门定义这么一个模式，而其他多个按键的命令仍然归于普通模式呢。这是因为，Vim允许你自定义操作和移动，换言之，这个模式的存在，使 Vim 的命令的扩展变得极为高效，试想，自定义一个移动，它可以和所有操作命令配合得到相应的命令，定义一个操作则可以和所有移动命令结合，不用我再多说了吧。</p>
-            <p class="remark">关于自定义操作命令，可以参考 <span class="command">:h map-operator</span> ，关于如何自定义移动，则相对复杂，建议可以从 <span class="command">:h omap-info</span> 开始了解。另外，你也可以特别关注一下 <a href="https://github.com/tpope">Tim Pope</a> 和 Kana Natsuno 的<a href="https://github.com/kana/vim-textobj-user">一个项目</a>。</p>
-            </article>
-            </section>
+        <!-- Tip 12 -->
+        <article id="tip-12">
+        <h4>备忘十二、操作与移动的结合</h4>
+        <p>Vim 非凡的效力常常来自于操作与移动的结合，这同样是贯穿于 Vim 设计的另一条主线。因此，请记住！</p>
+        <blockquote class="attention">操作命令 + 移动命令 = 行动命令（改动）</blockquote>
+        <p>比如删除 <span class="command">d</span> 是一个操作，它和不同的移动命令结合在一起最终形成不同的命令。</p>
+        <table>
+          <tr> <td>操作</td> <td>移动</td> <td>最终命令</td> <td>意义</td> </tr>
+          <tr> <td rowspan="3"><span class="command">d</span></td> <td><span class="command">l</span></td> <td><span class="command">dl</span></td> <td>删除一个字符</td> </tr>
+          <tr> <td><span class="command">aw</span></td> <td><span class="command">daw</span></td> <td>删除一个单词</td> </tr>
+          <tr> <td><span class="command">ap</span></td> <td><span class="command">dap</span></td> <td>删除一段话</td> </tr>
+        </table>
+        <p>把上表中的删除操作命令 <span class="command">d</span> 换成其他的操作，如 <span class="command">c</span> 和 <span class="command">y</span> 等代入，同样可以和不同的移动命令组合成不同的行动。因此，只要知道了一些操作命令和一些移动命令，其实你只要将它们交叉组合，就已经知道“一些×一些”那么多的命令了，更多关于操作命令和移动命令的内容可以参考 <span class="command">:h operator</span>  ，整个帮助与移动命令有关。</p>
+        <p>最后再补充一条规则，将操作命令重复按两次，等于将该操作应用于整行。</p>
+        <blockquote class="attention">操作 + 同一操作 = 把该操作应用于整行</blockquote>
+        <p>比如 <span class="command">gUgU</span> 将把整行的字母大写化，是的，<span class="command">gU</span> 是一个操作命令。</p>
+        <p class="remark">关于操作悬挂模式：其实除了<a href="#p1-modes">本节</a>开头提到的几种主要模式外，Vim 还有其他一些模式，比如这里我们要提到的“操作悬挂模式”。该模式指的是这样一个状态，即它只接受移动命令，当我们输入操作命令后，操作悬挂模式被激活，但是什么改动也没发生，它等待移动命令来完整这一个操作，然后执行改动。在操作悬挂模式激活的状态下，我们同样可以只用 <span class="command">Esc</span> 来退回普通模式，即放弃操作。</p>
+        <p class="remark">当然了，有很多命令也需要多次按键才能完整，但是它们与操作悬挂模式不同，多数情况下，第一个按键只相当于是第二个按键的前缀，比如 <span class="command">g</span>，<span class="command">z</span>，<span class="command">[</span>，<span class="command">ctrl-w</span>，用 <span class="command">:h</span> 来查看它们的意义。这些命令并不激发操作悬挂模式，之所以用多个按键来表示一个命令，你可以这样理解，其前缀提供了一个新的命名空间，使得命令的数量得以增加，仅此而已。</p>
+        <p class="remark">你也许会奇怪，为了只存在于操作命令和移动命令之间那么短暂的几毫秒，为什么要专门定义这么一个模式，而其他多个按键的命令仍然归于普通模式呢。这是因为，Vim允许你自定义操作和移动，换言之，这个模式的存在，使 Vim 的命令的扩展变得极为高效，试想，自定义一个移动，它可以和所有操作命令配合得到相应的命令，定义一个操作则可以和所有移动命令结合，不用我再多说了吧。</p>
+        <p class="remark">关于自定义操作命令，可以参考 <span class="command">:h map-operator</span> ，关于如何自定义移动，则相对复杂，建议可以从 <span class="command">:h omap-info</span> 开始了解。另外，你也可以特别关注一下 <a href="https://github.com/tpope">Tim Pope</a> 和 Kana Natsuno 的<a href="https://github.com/kana/vim-textobj-user">一个项目</a>。</p>
+        </article>
 
-            <!-- Insert mode -->
-            <section id="insert-mode">
-            
-            <!-- Tip 13 -->
-            <article id="tip-13">
-            <h4>备忘十三、在插入模式下直接修正</h4>
-            <p>如果在插入模式下犯了错，我们可以立刻对其进行修正，而无需转换模式。</p>
-            <p>除了退回键可用于插入模式下的修改以外，我们还有其他一些插入模式下的命令可以用于修改。通常情况下，如果要修正的错误在单词的结尾附近，那么利用退回键删除最后的输入，然后重新输入是最快捷的，但是如果要修正的错误在单词开头呢？</p>
-            <p>专业打字员的建议是，删掉整个单词重新打一遍，试想，如果你的打字速度超过一分钟六十个，重打一遍不过只需要一秒钟。</p>
-            <p>不这么做的话，你需要切换到普通模式，定位到要修正的错误，然后修正。最后再返回插入模式。没错，你可以这么干，但这对你提高打字速度毫无帮助，而且这显然需要超过一秒的时间。我们可以在模式之间切换并不意味着我们就应该这么做。</p>
-            <p>在插入模式下，有这么几个命令值得记忆：</p>
-            <table>
-              <tr> <td>按键</td> <td>效果</td> </tr>
-              <tr> <td><span class="command">ctrl-h</span></td> <td>回删一个字符，相当于退回键。</td> </tr>
-              <tr> <td><span class="command">ctrl-w</span></td> <td>回删一个单词。</td> </tr>
-              <tr> <td><span class="command">ctrl-u</span></td> <td>回删至本行的开头。</td> </tr>
-            </table>
-            </article>
-            
-            <!-- Tip 14 -->
-            <article id="tip-14">
-            <h4>备忘十四、回到普通模式</h4>
-            <p>尽管我们最长停留在普通模式，但是不管怎么样，插入模式只为一件任务而生，那就是输入文字。因此知道如何在这两者之间切换，并且快速切换显得至关重要。</p>
-            <p>经典的方式当然是利用 <span class="command">Esc</span> 键，但是在大多数键盘上，这就像是一次长途旅行一样让人疲惫不堪，替换的方案是利用 <span class="command">ctrl-[</span> 来达到一模一样的效果，在 Vim 中该命令等同于 <span class="command">Esc</span> 。</p>
-            <p>此外，我们也许常常会碰到这样一个情景，即在插入模式，我们需要进入普通模式以便触发一个普通模式下地命令，然后回到原地方继续输入。Vim 对此有一个绝佳的解决方案，简直帅呆了酷毙了。</p>
-            <p>这就是所谓的“插入普通模式”，该模式给我们触发一个普通模式下命令的机会，执行完该命令后自动回到原处进入插入模式。你只要在插入模式下按 <span class="command">ctrl-o</span> 就激发了该模式。来看个例子。</p>
-            <p>我们在输入时，光标下移，然而整个文件的各行是不动的，除非光标已触底仍要继续向下，这时文件上移一行，但我们往往希望，光标能居于屏幕中央，以便我们的视线可以兼顾到上下文，<span class="command">zz</span> 命令为此而生，然而我们需要进入普通模式才行，但现在有了 <span class="command">ctrl-o</span> ，一切水到渠成，在插入模式下按 <span class="command">ctrl-o zz</span> 便到达了目的，随后紧接着，你就又可以继续输入了。</p>
-            </article>
+        <!-- Normal mode: END -->
+        </section>
 
-            <!-- Tip 15 -->
-            <article id="tip-15">
-            <h4>备忘十五、插入模式下从寄存器粘贴</h4>
-            <p>复制和粘贴操作通常都是在普通模式下进行，对了，说句题外话，在 Vim 中其实复制更准确的应该说是抽取 (yank) ，对应的命令是 <span class="command">y</span> ，粘贴应该说是放置 (put) ，对应的命令是 <span class="command">p</span> 。但是有时候，我们也许想在插入模式下直接粘贴一些文本。<p>
-            <p><span class="command">&lt;ctrl-r&gt;{寄存器名称}</span> 命令就是为此而设计的。</p>
-            <p>该命令在插入模式下，将指定的寄存器存储的内容粘贴到光标当前位置下。需要注意的是，这个命令一般只适用于少量内容，因为如果 Vim 的 'textwidth' 和 'autoindent' 开启的话，有可能引起你所不期望的截断与缩进。这是因为当我们将寄存器的内容在插入模式下往出粘贴的时候，实际就好像是我们一个字符一个字符地从键盘输入的，因而，除了上述副作用外，你还可能会注意到少许的延时现象。<br />更多内容请参考 <span class="command">:h i_ctrl-r</span> 。</p>
-            <p><span class="command">&lt;ctrl-r&gt;&lt;ctrl-p&gt;{寄存器名称}</span> 会稍微聪明一些，它在粘贴时只按原文照搬，同时修复非预期的缩进。请参考 <span class="command">:h i_ctrl-r_ctrl-p</span> 。</p>
-            <p>具体应用场景可以下载 <a download="tip-15.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-15.txt">tip-15.txt</a> 尝试。</p>
-            </article>
-            
-            <!-- Tip 16 -->
-            <article id="tip-16">
-            <h4>备忘十六、简单计算并插入结果</h4>
-            <p>如果在备忘十五中你查看了 <span class="command">:h i_ctrl-r</span> ，那么你可能会注意到一个比较有意思的寄存器 &mdash; 表达式寄存器 (expression register) 。这是干啥用的呢？简单说，就是你可以输入一个表达式，让 Vim 来替你计算，然后在文本中插入计算所得的结果。</p>
-            <p>比如说，你正输入一张表格，第一列是物品，第二列是数量，第三列是单价，最后你发现，加上第四列该物品总价是个不错的主意时，你就会发现表达寄存器是个不错的玩意了。要不试试 <a download="tip-16.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-16.txt">tip-16.txt</a> 。<p>
-            <p>说半天没讲这个命令长什么样，记住是这样的 <span class="command">&lt;ctrl-r&gt;=</span> ，还没完，这时 Vim 将激发表达式寄存器，注意屏幕左下角，你现在可以输入要计算的表达式了，完成后请按回车键。注意该表达式并不仅仅限于算术运算。</p>
-            </article>
-            
-            <!-- Tip 17 -->
-            <article id="tip-17">
-            <h4>备忘十七、用字码输入特殊字符</h4>
-            <p>Vim 可以用字码来输入任何字符，这对于输入一些键盘上找不到的字符是极为方便的。在插入模式下，我们可以用 <span class="command">&lt;ctrl-v&gt;{最多三位十进制字码}</span> 来实现这一目的。<p>
-            <p>比如我们想输入大写字母 A ，它的字码是65，于是我们就可以用 <span class="command">&lt;ctrl-v&gt;065</span> 来输入。</p>
-            <p>但是如果我们想输入的字符的字码多于三位数怎么办呢？别急，我们还有十六进制表达法，具体如下， <span class="command">&lt;ctrl-v&gt;u{最多四位十六进制字码}</span> ，注意到四位十六进制字码前置的 u ，这样的表达方式下，其可以表达的字符数达到 65536 个，这样就大概覆盖了基本的 Unicode 字符集。比如我们想输入 ¿ 。就可以用 <span class="command">&lt;ctrl-v&gt;u00bf</span> 。更多内容可以参考 <span class="command">:h i_ctrl-v_digit</span> 。</p>
-            <p class="remark">最后值得一提的是，如果 <span class="command">&lt;ctrl-v&gt;</span> 后如果紧接着一个非数字按键，那么 Vim 将保证输入该按键代表的字符，比如说，在 expandtab 选项启用时，我们直接键入的 Tab 键将被转换为对应的空格，而有时候，这不是我们想要的，比如说，makefile 就要求必须输入 Tab ，这时我们就可以 <span class="command">&lt;ctrl-v&gt;&lt;Tab&gt;</span> 这样输入 Tab，Vim 保证输入的 Tab 不会被 expandtab 解释成空格。</p>
-            <p>总结一下：</p>
-            <table>
-              <tr> <th>按键</th> <th>例子</th> <th>输入字符</th> </tr>
-              <tr> <td>&lt;ctrl-v&gt;{最多三位十进制字码}</td> <td>&lt;ctrl-v&gt;165</td> <td>¥</td> </tr>
-              <tr> <td>&lt;ctrl-v&gt;u{最多四位十六进制字码}</td> <td>&lt;ctrl-v&gt;u00a5</td> <td>¥</td> </tr>
-              <tr> <td>&lt;ctrl-v&gt;{非数字按键}</td> <td>&lt;ctrl-v&gt;$</td> <td>$</td></tr>
-            </table>
-            <p>小技巧，如果你想要知道某个字符的字码，可以将光标移动到这个字符上，然后用 <span class="command">ga</span> 去查看十进制、十六进制和八进制的字码。当然这技巧可能并不大实用。如果你想要输入的字符不在文本中，而你又不知道其字码，那么大概你只能去 Unicode 字符集上查找了。</p>
-            </article>
-            
-            <!-- Tip 18 -->
-            <article id="tip-18">
-            <h4>备忘十八、用复合字母来输入特殊字符</h4>
-            <p>用字码来输入字符的优点是你大概可以输入任何可以打印的字符，缺点是难以记忆。</p>
-            <p>vim 为此提供了另一种方案来输入一些你可能常用的又不在键盘上的字符，该方案用一对复合字母来表达特殊字符，命令为 <span class="command">&lt;ctrl-k&gt;&lt;字母&gt;&lt;字母&gt;</span> 。这里字母的意义有扩大，并不局限于二十六个英文字母。</p>
-            <p>比如本人<abbr title="Fri Oct 31 23:42:40 CET 2014">目前</abbr>还在维护另一个关于法语语法的项目，就经常遇到需要输入法语中一些比较特殊的字符的问题，比如 ê œ à é ö 等等，如果用切换输入法的话，本来在 Vim 里用中文就已经够麻烦的了，再加上法语输入，Oh~là~~à~~~，c'est pas vrai. 因此，我花了一点时间记忆这些特殊字母，因为不是很多而且是有规律的，我没有花两分钟大概就基本记住了，接下来再维护这个项目时就轻松多了。</p>
-            <p>你可以用 <span class="command">:h digraph-table</span> 来查找在 Vim 中能够用复合字母表示的字符。</p>
-            <p>上面提到的例子：</p>
-            <table>
-              <tr> <th>输入字符</th> <th>按键</th> </tr>
-              <tr> <td>ê</td> <td>&lt;ctrl-k&gt;e&gt;</td> </tr>
-              <tr> <td>œ</td> <td>&lt;ctrl-k&gt;oe</td> </tr>
-              <tr> <td>à</td> <td>&lt;ctrl-k&gt;a!</td> </tr>
-              <tr> <td>é</td> <td>&lt;ctrl-k&gt;e'</td> </tr>
-              <tr> <td>ö</td> <td>&lt;ctrl-k&gt;o:</td> </tr>
-            </table>
-            </article>
-            
-            <!-- Tip 19 -->
-            <article id="tip-19">
-            <h4>备忘十九、</h4>
-            </article>
-            </section>
+        <!-- Insert mode: BEGIN -->
+        <section id="insert-mode">
 
-            </section>
+        <!-- Tip 13 -->
+        <article id="tip-13">
+        <h4>备忘十三、在插入模式下直接修正</h4>
+        <p>如果在插入模式下犯了错，我们可以立刻对其进行修正，而无需转换模式。</p>
+        <p>除了退回键可用于插入模式下的修改以外，我们还有其他一些插入模式下的命令可以用于修改。通常情况下，如果要修正的错误在单词的结尾附近，那么利用退回键删除最后的输入，然后重新输入是最快捷的，但是如果要修正的错误在单词开头呢？</p>
+        <p>专业打字员的建议是，删掉整个单词重新打一遍，试想，如果你的打字速度超过一分钟六十个，重打一遍不过只需要一秒钟。</p>
+        <p>不这么做的话，你需要切换到普通模式，定位到要修正的错误，然后修正。最后再返回插入模式。没错，你可以这么干，但这对你提高打字速度毫无帮助，而且这显然需要超过一秒的时间。我们可以在模式之间切换并不意味着我们就应该这么做。</p>
+        <p>在插入模式下，有这么几个命令值得记忆：</p>
+        <table>
+          <tr> <td>按键</td> <td>效果</td> </tr>
+          <tr> <td><span class="command">ctrl-h</span></td> <td>回删一个字符，相当于退回键。</td> </tr>
+          <tr> <td><span class="command">ctrl-w</span></td> <td>回删一个单词。</td> </tr>
+          <tr> <td><span class="command">ctrl-u</span></td> <td>回删至本行的开头。</td> </tr>
+        </table>
+        </article>
 
-            <!-- Part 2: Files -->
-            <section class="p2-files">
-            <h3>文件处理</h3>
-            <p></p>
-            </section>
+        <!-- Tip 14 -->
+        <article id="tip-14">
+        <h4>备忘十四、回到普通模式</h4>
+        <p>尽管我们最长停留在普通模式，但是不管怎么样，插入模式只为一件任务而生，那就是输入文字。因此知道如何在这两者之间切换，并且快速切换显得至关重要。</p>
+        <p>经典的方式当然是利用 <span class="command">Esc</span> 键，但是在大多数键盘上，这就像是一次长途旅行一样让人疲惫不堪，替换的方案是利用 <span class="command">ctrl-[</span> 来达到一模一样的效果，在 Vim 中该命令等同于 <span class="command">Esc</span> 。</p>
+        <p id="insert-nomarl-mode">此外，我们也许常常会碰到这样一个情景，即在插入模式，我们需要进入普通模式以便触发一个普通模式下地命令，然后回到原地方继续输入。Vim 对此有一个绝佳的解决方案，简直帅呆了酷毙了。</p>
+        <p>这就是所谓的“插入普通模式”，该模式给我们触发一个普通模式下命令的机会，执行完该命令后自动回到原处进入插入模式。你只要在插入模式下按 <span class="command">ctrl-o</span> 就激发了该模式。来看个例子。</p>
+        <p>我们在输入时，光标下移，然而整个文件的各行是不动的，除非光标已触底仍要继续向下，这时文件上移一行，但我们往往希望，光标能居于屏幕中央，以便我们的视线可以兼顾到上下文，<span class="command">zz</span> 命令为此而生，然而我们需要进入普通模式才行，但现在有了 <span class="command">ctrl-o</span> ，一切水到渠成，在插入模式下按 <span class="command">ctrl-o zz</span> 便到达了目的，随后紧接着，你就又可以继续输入了。</p>
+        </article>
 
-            <!-- Part 3: Getting Around Faster -->
-            <section class="p3-getting-around-faster">
-            <h3>快速浏览与操作</h3>
-            <p></p>
-            </section>
+        <!-- Tip 15 -->
+        <article id="tip-15">
+        <h4>备忘十五、插入模式下从寄存器粘贴</h4>
+        <p>复制和粘贴操作通常都是在普通模式下进行，对了，说句题外话，在 Vim 中其实复制更准确的应该说是抽取 (yank) ，对应的命令是 <span class="command">y</span> ，粘贴应该说是放置 (put) ，对应的命令是 <span class="command">p</span> 。但是有时候，我们也许想在插入模式下直接粘贴一些文本。<p>
+        <p><span class="command">&lt;ctrl-r&gt;{寄存器名称}</span> 命令就是为此而设计的。</p>
+        <p>该命令在插入模式下，将指定的寄存器存储的内容粘贴到光标当前位置下。需要注意的是，这个命令一般只适用于少量内容，因为如果 Vim 的 'textwidth' 和 'autoindent' 开启的话，有可能引起你所不期望的截断与缩进。这是因为当我们将寄存器的内容在插入模式下往出粘贴的时候，实际就好像是我们一个字符一个字符地从键盘输入的，因而，除了上述副作用外，你还可能会注意到少许的延时现象。<br />更多内容请参考 <span class="command">:h i_ctrl-r</span> 。</p>
+        <p><span class="command">&lt;ctrl-r&gt;&lt;ctrl-p&gt;{寄存器名称}</span> 会稍微聪明一些，它在粘贴时只按原文照搬，同时修复非预期的缩进。请参考 <span class="command">:h i_ctrl-r_ctrl-p</span> 。</p>
+        <p>具体应用场景可以下载 <a download="tip-15.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-15.txt">tip-15.txt</a> 尝试。</p>
+        </article>
 
-            <!-- Part 4: Registers -->
-            <section class="p4-registers">
-            <h3>寄存器</h3>
-            <p></p>
-            </section>
+        <!-- Tip 16 -->
+        <article id="tip-16">
+        <h4>备忘十六、简单计算并插入结果</h4>
+        <p>如果在备忘十五中你查看了 <span class="command">:h i_ctrl-r</span> ，那么你可能会注意到一个比较有意思的寄存器 &mdash; 表达式寄存器 (expression register) 。这是干啥用的呢？简单说，就是你可以输入一个表达式，让 Vim 来替你计算，然后在文本中插入计算所得的结果。</p>
+        <p>比如说，你正输入一张表格，第一列是物品，第二列是数量，第三列是单价，最后你发现，加上第四列该物品总价是个不错的主意时，你就会发现表达寄存器是个不错的玩意了。要不试试 <a download="tip-16.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-16.txt">tip-16.txt</a> 。<p>
+        <p>说半天没讲这个命令长什么样，记住是这样的 <span class="command">&lt;ctrl-r&gt;=</span> ，还没完，这时 Vim 将激发表达式寄存器，注意屏幕左下角，你现在可以输入要计算的表达式了，完成后请按回车键。注意该表达式并不仅仅限于算术运算。</p>
+        </article>
 
-            <!-- Part 5: Patterns -->
-            <section class="p5-patterns">
-            <h3>模型</h3>
-            <p></p>
-            </section>
+        <!-- Tip 17 -->
+        <article id="tip-17">
+        <h4>备忘十七、用字码输入特殊字符</h4>
+        <p>Vim 可以用字码来输入任何字符，这对于输入一些键盘上找不到的字符是极为方便的。在插入模式下，我们可以用 <span class="command">&lt;ctrl-v&gt;{最多三位十进制字码}</span> 来实现这一目的。<p>
+        <p>比如我们想输入大写字母 A ，它的字码是65，于是我们就可以用 <span class="command">&lt;ctrl-v&gt;065</span> 来输入。</p>
+        <p>但是如果我们想输入的字符的字码多于三位数怎么办呢？别急，我们还有十六进制表达法，具体如下， <span class="command">&lt;ctrl-v&gt;u{最多四位十六进制字码}</span> ，注意到四位十六进制字码前置的 u ，这样的表达方式下，其可以表达的字符数达到 65536 个，这样就大概覆盖了基本的 Unicode 字符集。比如我们想输入 ¿ 。就可以用 <span class="command">&lt;ctrl-v&gt;u00bf</span> 。更多内容可以参考 <span class="command">:h i_ctrl-v_digit</span> 。</p>
+        <p class="remark">最后值得一提的是，如果 <span class="command">&lt;ctrl-v&gt;</span> 后如果紧接着一个非数字按键，那么 Vim 将保证输入该按键代表的字符，比如说，在 expandtab 选项启用时，我们直接键入的 Tab 键将被转换为对应的空格，而有时候，这不是我们想要的，比如说，makefile 就要求必须输入 Tab ，这时我们就可以 <span class="command">&lt;ctrl-v&gt;&lt;Tab&gt;</span> 这样输入 Tab，Vim 保证输入的 Tab 不会被 expandtab 解释成空格。</p>
+        <p>总结一下：</p>
+        <table>
+          <tr> <th>按键</th> <th>例子</th> <th>输入字符</th> </tr>
+          <tr> <td>&lt;ctrl-v&gt;{最多三位十进制字码}</td> <td>&lt;ctrl-v&gt;165</td> <td>¥</td> </tr>
+          <tr> <td>&lt;ctrl-v&gt;u{最多四位十六进制字码}</td> <td>&lt;ctrl-v&gt;u00a5</td> <td>¥</td> </tr>
+          <tr> <td>&lt;ctrl-v&gt;{非数字按键}</td> <td>&lt;ctrl-v&gt;$</td> <td>$</td></tr>
+        </table>
+        <p>小技巧，如果你想要知道某个字符的字码，可以将光标移动到这个字符上，然后用 <span class="command">ga</span> 去查看十进制、十六进制和八进制的字码。当然这技巧可能并不大实用。如果你想要输入的字符不在文本中，而你又不知道其字码，那么大概你只能去 Unicode 字符集上查找了。</p>
+        </article>
 
-            <!-- Part 6: Tools -->
-            <section class="p6-tools">
-            <h3>工具</h3> <p></p> </section>
+        <!-- Tip 18 -->
+        <article id="tip-18">
+        <h4>备忘十八、用复合字母来输入特殊字符</h4>
+        <p>用字码来输入字符的优点是你大概可以输入任何可以打印的字符，缺点是难以记忆。</p>
+        <p>vim 为此提供了另一种方案来输入一些你可能常用的又不在键盘上的字符，该方案用一对复合字母来表达特殊字符，命令为 <span class="command">&lt;ctrl-k&gt;&lt;字母&gt;&lt;字母&gt;</span> 。这里字母的意义有扩大，并不局限于二十六个英文字母。</p>
+        <p>比如本人<abbr title="Fri Oct 31 23:42:40 CET 2014">目前</abbr>还在维护另一个关于法语语法的项目，就经常遇到需要输入法语中一些比较特殊的字符的问题，比如 ê œ à é ö 等等，如果用切换输入法的话，本来在 Vim 里用中文就已经够麻烦的了，再加上法语输入，Oh~là~~à~~~，c'est pas vrai. 因此，我花了一点时间记忆这些特殊字母，因为不是很多而且是有规律的，我没有花两分钟大概就基本记住了，接下来再维护这个项目时就轻松多了。</p>
+        <p>你可以用 <span class="command">:h digraph-table</span> 来查找在 Vim 中能够用复合字母表示的字符。</p>
+        <p>上面提到的例子：</p>
+        <table>
+          <tr> <th>输入字符</th> <th>按键</th> </tr>
+          <tr> <td>ê</td> <td>&lt;ctrl-k&gt;e&gt;</td> </tr>
+          <tr> <td>œ</td> <td>&lt;ctrl-k&gt;oe</td> </tr>
+          <tr> <td>à</td> <td>&lt;ctrl-k&gt;a!</td> </tr>
+          <tr> <td>é</td> <td>&lt;ctrl-k&gt;e'</td> </tr>
+          <tr> <td>ö</td> <td>&lt;ctrl-k&gt;o:</td> </tr>
+        </table>
+        </article>
 
-            <!-- About Author -->
-            <section class="Author">
-            <h3>作者</h3>
-            <p></p>
-            </section>
+        <!-- Tip 19 -->
+        <article id="tip-19">
+        <h4>备忘十九、替换模式下覆盖原有文本</h4>
+        <p>替换模式与插入模式基本相同，除了替换模式下输入的文本覆盖原有的文本。</p>
+        <p>在普通模式下按 <span class="command">R</span> 进入替换模式，之后你的输入将覆盖原文。</p>
+        <p>在替换模式下，覆盖某些字符的情形可能会比较复杂，试想光标正好停留在一个 Tab 字符上，该字符将紧接着的内容对齐到下一个制表位，因此和光标之间看起来似乎存在多个空格，但其实只是一个制表符，因此当你输入一个字符时，整个制表符被覆盖，或者说被替换，感觉就好像用一个字符替换了很多个空格，这常常会引起我们不想看到的表现形式的变化。为此，Vim 提供了另一种模式 &mdash; 虚拟替换模式。在该模式下，Vim 替换的是在屏幕上表现出来的字符，而不是实际上真正的字符。因此，对于制表符而言，除非你的输入已经超过了这个制表符的制表位，否则，你之前的输入就好像在这个制表符前进行插入。激发虚拟替换模式的命令是 <span class="command">gR</span> 。</p>
+        <p>此外，Vim 还提供一次性的替换模式，即在普通模式下用 <span class="command">r</span> 或 <span class="command">gr</span> 进入相应的替换模式或虚拟替换模式以便替换光标下的一个字符，仅仅一个字符，然后便自动回到普通模式。该过程和 <a href="#insert-nomarl-mode"><span class="command">&lt;ctrl-o&gt;</span></a> 类似，然而模式切换的方向却正好相反。</p>
+        <p>更多内容请参考 <span class="command">:h R</span>，<span class="command">:h r</span>，<span class="command">:h gR</span> 和 <span class="command">:h gr</span> 。</p>
+        </article>
 
-            <!-- Contact me -->
-            <section class="contact">
-            <h3>联系我</h3>
-            <p>如果您对本网站有问题可<a href="mailto:baoyuan.zh@gmail.com">邮件</a>与我联系</p>
-            </section>
+        <!-- Insert mode: END -->
+        </section>
 
-            </section>
+        <!-- Visual mode: BEGIN -->
+        <section id="visual-mode">
 
-            <aside id="sidebar">
-            <a href="https://github.com/baoyuanzh/VIM_Internship/zipball/master" class="button">
-              <small>Download</small>
-              master.zip 
-            </a>
-            <a href="https://github.com/baoyuanzh/VIM_Internship/zipball/gh-pages" class="button">
-              <small>Download</small>
-              pages.zip 
-            </a>
-            <a href="https://github.com/baoyuanzh/VIM_Internship/zipball/master" class="button">
-              <small>Download</small>
-              master.tar.gz 
-            </a>
-            <a href="https://github.com/baoyuanzh/VIM_Internship/tarball/gh-pages" class="button">
-              <small>Download</small>
-              pages.tar.gz 
-            </a>
+        <!-- Tip 20 -->
+        <article id="tip-20">
+        <h4>备忘二十、</h4>
+        </article>
 
-            <p class="repo-owner"><a href="https://github.com/baoyuanzh/VIM_Internship"></a> is maintained by <a href="https://github.com/baoyuanzh">宝元(baoyuanzh)</a>.</p>
+        <!-- Tip 21 -->
+        <article id="tip-21">
+        <h4>备忘二十一、</h4>
+        </article>
 
-            <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-            </aside>
-          </div>
-        </div>
+        <!-- Tip 22 -->
+        <article id="tip-22">
+        <h4>备忘二十二、</h4>
+        </article>
+
+        <!-- Tip 23 -->
+        <article id="tip-23">
+        <h4>备忘二十三、</h4>
+        </article>
+
+        <!-- Tip 24 -->
+        <article id="tip-24">
+        <h4>备忘二十四、</h4>
+        </article>
+
+        <!-- Tip 25 -->
+        <article id="tip-25">
+        <h4>备忘二十五、</h4>
+        </article>
+
+        <!-- Tip 26 -->
+        <article id="tip-26">
+        <h4>备忘二十六、</h4>
+        </article>
+
+        <!-- Visual mode: END -->
+        </section>
+
+        <!-- Part 1: Modes: END -->
+        </section>
+
+        <!-- Part 2: Files: BEGIN -->
+        <section class="p2-files">
+
+        <h3>文件处理</h3>
+        <p></p>
+
+        <!-- Part 2: Files: END -->
+        </section>
+
+        <!-- Part 3: Getting Around Faster: BEGIN -->
+        <section class="p3-getting-around-faster">
+
+        <h3>快速浏览与操作</h3>
+        <p></p>
+
+        <!-- Part 3: Getting Around Faster: END -->
+        </section>
+
+        <!-- Part 4: Registers: BEGIN -->
+        <section class="p4-registers">
+
+        <h3>寄存器</h3>
+        <p></p>
+
+        <!-- Part 4: Registers: END -->
+        </section>
+
+        <!-- Part 5: Patterns: BEGIN -->
+        <section class="p5-patterns">
+
+        <h3>模型</h3>
+        <p></p>
+
+        <!-- Part 5: Patterns: END -->
+        </section>
+
+        <!-- Part 6: Tools: BEGIN -->
+        <section class="p6-tools">
+
+        <h3>工具</h3>
+        <p></p>
+
+        <!-- Part 6: Tools: END -->
+        </section>
+
+        <!-- About Author: BEGIN -->
+        <section class="Author">
+        <h3>作者</h3>
+        <p></p>
+
+        <!-- About Author: END -->
+        </section>
+
+        <!-- Contact me: BEGIN -->
+        <section class="contact">
+
+        <h3>联系我</h3>
+        <p>如果您对本网站有问题可<a href="mailto:baoyuan.zh@gmail.com">邮件</a>与我联系</p>
+
+        <!-- Contact me: END -->
+        </section>
+
+        <!-- Main Contents: END -->
+        </section>
+
+        <aside id="sidebar">
+        <a href="https://github.com/baoyuanzh/VIM_Internship/zipball/master" class="button">
+          <small>Download</small>
+          master.zip 
+        </a>
+        <a href="https://github.com/baoyuanzh/VIM_Internship/zipball/gh-pages" class="button">
+          <small>Download</small>
+          pages.zip 
+        </a>
+        <a href="https://github.com/baoyuanzh/VIM_Internship/zipball/master" class="button">
+          <small>Download</small>
+          master.tar.gz 
+        </a>
+        <a href="https://github.com/baoyuanzh/VIM_Internship/tarball/gh-pages" class="button">
+          <small>Download</small>
+          pages.tar.gz 
+        </a>
+
+        <p class="repo-owner"><a href="https://github.com/baoyuanzh/VIM_Internship"></a> is maintained by <a href="https://github.com/baoyuanzh">宝元(baoyuanzh)</a>.</p>
+
+        <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
 
 
-      </body>
-    </html>
+  </body>
+</html>
