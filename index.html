@@ -348,18 +348,29 @@
         <h4>备忘二十、神游可视化模式</h4>
         <p>可视化模式让我们可以选取一部分文本以便在其上进行操作。尽管听起来很直接，但 Vim 对于如何选取文本有不同的理解。此外，还需要记住，可视化模式是不同于普通模式和插入模式的另一个主要模式，因此，在该模式下，同一个按键代表的可能是不同的意义。</p>
         <p>很多在普通模式下的命令，在可视化模式下的意义相同，比如 <span class="command">h</span>, <span class="command">j</span>, <span class="command">k</span>, <span class="command">l</span>, <span class="command">f{字符}</span>, <span class="command">;</span>, <span class="command">,</span>, <span class="command">n</span>, <span class="command">N</span> 等等，但是，唯一需要注意的是当我们用这些命令移动光标时，我们同时也改变了被选中的文本的边界。</p>
-        <p>另一些命令在可视化模式下意义略有改变，这些命令大多是我们在 <a href="#tip-12">tip-12</a> 中提到过的操作，<span class="command">:h operator</span> 。在普通模式中，这些操作必须和某个移动操作组合在一起以便完成改动，然而在可视化模式下，则是先选中需要改动的文本，再使用这些命令时则直接触发改动。这和大多数其他编辑器的逻辑是一致的，但是在细节上还是不要忘了 Vim 有模式之分，比如在其他编辑器中，选中的文本可以直接用新文本替换，但在 Vim 中选中文本后，别忘了你仍然需要用具体的命令来提示 Vim 你接下来需要做的事，比如用 <span class="command">c</span> 来替换文本。这似乎更麻烦，但不要忘了，在其他大多数编辑器中，你大概只能删除、替换或复制选中的文本，而 Vim 正是因为多了中间这一步，才大大丰富你接下来所能做到的事情。</p>
+        <p>另一些命令在可视化模式下意义略有改变，这些命令大多是我们在 <a href="#tip-12">tip-12</a> 中提到过的操作，<span class="command">:h operator</span> 。在普通模式中，这些操作必须和某个移动操作组合在一起以便完成改动，然而在可视化模式下，则是先选中需要改动的文本，再使用这些命令时则直接触发改动。这和大多数其他编辑器的逻辑是一致的，但是在细节上还是不要忘了 Vim 有模式之分，比如在其他编辑器中，选中的文本可以直接用新文本替换，但在 Vim 中选中文本后，别忘了你仍然需要用具体的命令来提示 Vim 你接下来需要做的事，比如用 <span class="command">c</span> 来替换文本。这似乎更麻烦，但不要忘了，在其他大多数编辑器中，你大概只能删除、替换或复制选中的文本，而 Vim 正是因为多了中间这一步，才大大丰富了你接下来所能做到的事情。</p>
         <p class="remark">选择模式：其实 Vim 也可以模拟其他编辑器选中文本后可以直接进行改变的行为，你只要在可视化模式下用 <span class="command">&lt;ctrl-g&gt;</span> 来进行切换，这时 Vim 左下角显示字样将由 -- INSERT -- 变为 -- SELECT -- 。相信我，如果你愿意接受 Vim 的本质，你会发现其实选择模式并无多大用处。更多内容请参考 <span class="command">:h Select-mode</span> 。</p>
         </article>
 
         <!-- Tip 21 -->
         <article id="tip-21">
         <h4>备忘二十一、可视化选中区域</h4>
+        <p>Vim 的可视化模式有三个子模式，它们分别是：</p>
+        <ol>
+          <li>字符可视化模式 &mdash; character-wise Visual mode</li>
+          <li>行可视化模式 &mdash; line-wise Visual mode</li>
+          <li>块可视化模式 &mdash; block-wise Visual mode</li>
+        </ol>
+        <p>本备忘主要说明如何启动这些模式，以及在它们之间进行切换。</p>
+        <p>在普通模式下，命令 <span class="command">v</span> 令我们进入字符可视化模式，或者用命令 <span class="command">V</span> 进入行可视化模式，又或者用 <span class="command">&lt;ctrl-v&gt;</span> 进入块可视化模式。对于如何在它们之间切换则十分直接，你想要进入哪个模式，就用那个模式对应的这三个命令之一就可以了。</p>
+        <p>最后再添加两个命令，与可视化模式一起使用是非常有益的。其一是命令 <span class="command">gv</span> ，该命令在普通模式下应用，它将选中最后一次由可视化模式选中的文本。其二是命令 <span class="command">o</span> ，注意该命令在可视化模式下应用与在普通模式下应用时意义的不同。在普通模式下，它代表新增一行并进入插入模式，在可视化模式下，则表示切换选中文本的自由端。可视化模式选中的文本区域一般有两端，其中一端是固定端，当我们用移动命令来移动光标时，它是不动的，另一端则是自由端，它则随着光标的移动来涨缩选中文本的区域。<span class="command">o</span> 命令在可视化模式下就是用来转换这两端的角色滴。</p>
         </article>
 
         <!-- Tip 22 -->
         <article id="tip-22">
-        <h4>备忘二十二、</h4>
+        <h4>备忘二十二、可视化模式下命令的重复</h4>
+        <p>本备忘十分简单，当我们在可视化模式下执行一个命令后，我们将自动回到普通模式，这时如果我们用句点命令 <span class="command">.</span> 会怎么样呢？答案很简单，它将按照当前光标位置计算出相当于最后一次选中的文本区域，然后对该区域内文本重复最后一次改动。</p>
+        <p>这样的设定对于行可视化模式下的改动往往是最合适的。用例子最容易说明一切，下载 <a download="tip-22.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-22.txt">tip-22.txt</a> 按照里面的说明一试便知。之后请阅读下一个备忘。</p>
         </article>
 
         <!-- Tip 23 -->
