@@ -375,7 +375,33 @@
 
         <!-- Tip 23 -->
         <article id="tip-23">
-        <h4>备忘二十三、</h4>
+        <h4>备忘二十三、普通模式下操作往往优于可视化模式下的命令</h4>
+        <p>可视化模式可能看起来更直观，但却并不总是那么好用，原因在于它和句点命令的配合有时不是我们想要的。看下面这个例子，比如说我们有这样几行文本，</p>
+        <pre><code>
+  <span class="cursor">&lt;</span>a href="#"&gt;one&lt;/a&gt;
+  &lt;a href="#"&gt;two&lt;/a&gt;
+  &lt;a href="#"&gt;three&lt;/a&gt;
+        </code></pre>
+        <p>现在我想把标签内的文本全部改成大写。利用可视化模式在第一行用命令 <span class="command">vit</span> 选中文本 <code>one</code> ，这里的 <span class="command">it</span> 是一个比较特殊的移动命令，叫做文本对象，可以理解为“标签内的文本”，具体可参考 <a href="#tip-51">tip-51</a> ，整个命令可理解为“可视化选中标签内的文本”。接着用可视化模式下的命令 <span class="command">U</span> 将其全部大写，关于该命令请参考 <span class="command">:h v_U</span> ，文本变为如下，光标停留在字母 O 上。</p>
+        <pre><code>
+  &lt;a href="#"&gt;<span class="cursor">O</span>NE&lt;/a&gt;
+  &lt;a href="#"&gt;two&lt;/a&gt;
+  &lt;a href="#"&gt;three&lt;/a&gt;
+        </code></pre>
+        <p>现在我们下移一行，光标停留在 two 的字母 t 上，这时用句点命令会发生什么呢？试一下，很好，它的效果完全如预期的那样将 two 大写为 TWO，如下：</p>
+        <pre><code>
+  &lt;a href="#"&gt;ONE&lt;/a&gt;
+  &lt;a href="#"&gt;<span class="cursor">t</span>wo&lt;/a&gt;
+  &lt;a href="#"&gt;three&lt;/a&gt;
+        </code></pre>
+        <p>现在我们再下移一行，光标停留在 three 的字母 t 上，这时用句点命令又会发生什么呢？试一下，似乎不太好，它将 three 变为 THRee，如下：</p>
+        <pre><code>
+  &lt;a href="#"&gt;ONE&lt;/a&gt;
+  &lt;a href="#"&gt;TWO&lt;/a&gt;
+  &lt;a href="#"&gt;<span class="cursor">T</span>HRee&lt;/a&gt;
+        </code></pre>
+        <p>如果你还记得上一个备忘，那么你就能很好地理解这一现象。对于句点命令来说，它首先将计算出最后一次改动要在那些文本上重复应用，这些文本是按照当前光标的位置以及最后一次可视化时选取的文本来计算的，即简单从光标当前位置往后推最后一次可视化时选中的文本的量。如果你这时用命令 <span class="command">gv</span> ，你将看到最后一次可视化模式所选中的文本 &mdash; 三个字符，因此句点命令只将光标下及其后的三个字符大写化了。</p>
+        <p>但如果我们不进入可视化模式而直接在普通模式下利用命令 <span class="command">gUit</span> 来大写化标签内的文本，那么再利用句点命令重复时就不会出现上述可视化模式下的问题了。</p>
         </article>
 
         <!-- Tip 24 -->
