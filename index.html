@@ -382,7 +382,7 @@
   &lt;a href="#"&gt;two&lt;/a&gt;
   &lt;a href="#"&gt;three&lt;/a&gt;
         </code></pre>
-        <p>现在我想把标签内的文本全部改成大写。利用可视化模式在第一行用命令 <span class="command">vit</span> 选中文本 <code>one</code> ，这里的 <span class="command">it</span> 是一个比较特殊的移动命令，叫做文本对象，可以理解为“标签内的文本”，具体可参考 <a href="#tip-51">tip-51</a> ，整个命令可理解为“可视化选中标签内的文本”。接着用可视化模式下的命令 <span class="command">U</span> 将其全部大写，关于该命令请参考 <span class="command">:h v_U</span> ，文本变为如下，光标停留在字母 O 上。</p>
+        <p>现在我想把标签内的文本全部改成大写。利用可视化模式在第一行用命令 <span class="command">vit</span> 选中文本 <code>one</code> ，这里的 <span class="command">it</span> 是一个比较特殊的移动命令，叫做文本对象，可以理解为“标签内的文本”，具体可参考<a href="#tip-51">备忘五十一</a>，整个命令可理解为“可视化选中标签内的文本”。接着用可视化模式下的命令 <span class="command">U</span> 将其全部大写，关于该命令请参考 <span class="command">:h v_U</span> ，文本变为如下，光标停留在字母 O 上。</p>
         <pre><code>
   &lt;a href="#"&gt;<span class="cursor">O</span>NE&lt;/a&gt;
   &lt;a href="#"&gt;two&lt;/a&gt;
@@ -440,12 +440,104 @@
 
         <!-- Tip 25 -->
         <article id="tip-25">
-        <h4>备忘二十五、</h4>
+        <h4>备忘二十五、如何改变列</h4>
+        <p>块可视化模式并不仅仅能用来编辑表格，它还可以同时在若干行插入文本或改变文本。假设有这样的文本：</p>
+        <pre><code>
+  <span class="cursor">l</span>i.one   a{ background-image: url('/images/sprite.png'); }
+  li.two   a{ background-image: url('/images/sprite.png'); }
+  li.three a{ background-image: url('/images/sprite.png'); }
+        </code></pre>
+        <p>我们要将 images 改成 components，换做以前我们可以这样做，将光标定位到 images 上，用命令 <span class="command">caw</span> 将 images 改成 components ，然后反复用句点命令 <span class="command">j.</span> 重复完成余下的工作，但是这里比较凑巧的是，这三个单词是纵向对其的，因此我们可以用块可视化模式同时选中它们，不用我多说了吧，接着在块可视化模式下发动命令 <span class="command">c</span> ，这时，我们进入插入模式，你可以接着输入 components ，但是 Vim 的表现有些奇怪，它现在变成这样了，注意，这时候你还在插入模式下，</p>
+        <pre><code>
+  li.one   a{ background-image: url('/components<span class="cursor">/</span>sprite.png'); }
+  li.two   a{ background-image: url('//sprite.png'); }
+  li.three a{ background-image: url('//sprite.png'); }
+        </code></pre>
+        <p>但是只要你一按下 <span class="command">Esc</span> 退回到普通模式，Vim 就会发一会儿呆，然后文本就变成这样子了：</p>
+        <pre><code>
+  li.one   a{ background-image: url('/component<span class="cursor">s</span>/sprite.png'); }
+  li.two   a{ background-image: url('/components/sprite.png'); }
+  li.three a{ background-image: url('/components/sprite.png'); }
+        </code></pre>
+        <p>这就是我们说的用块可视化模式来进行多行同时编辑。虽然过程并不是很同步，但只要结果如你所愿，也没什么不可以的不是。</p>
+        <p class="remark">不过有时候我想，这个例子有点被设计过的意思，要是 images 这个单词没对齐怎么办，或许可以参考<a href="#tip-5">备忘五</a>得到一个可能的解决方案。你可以下载 <a download="tip-25.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-25.txt">tip-25.txt</a> 自行尝试。</p>
         </article>
 
         <!-- Tip 26 -->
         <article id="tip-26">
-        <h4>备忘二十六、</h4>
+        <h4>备忘二十六、如何选择不规则的块并在其后添加内容</h4>
+        <p>事实上，块可视化模式并不一定要选中规则的矩形块，它还能理解行尾这一特殊位置。以下我们用一个例子来说明这个问题。</p>
+        <pre><code>
+  var one <span class="cursor">=</span> 1
+  var letter = 'a'
+  var string = "this is a string"
+        </code></pre>
+        <p>这里其实我们用的是和<a href="#tip-2">备忘二</a>同一个例子，即在每行的末尾添加分号，假设光标正好停在第一行等号上。这时我们用 <span class="command">&lt;ctrl-v&gt;jj</span> 选中三行一列，这时我们用 <span class="command">$</span> 将光标移至末尾，文本的样子则如下所示：</p>
+        <pre><code>
+  var one <span class="selected">= 1</span>
+  var lett<span class="selected">er = 'a'</span>
+  var stri<span class="selected">ng = "this is a string</span><span class="cursor">"</span>
+        </code></pre>
+        <p>接着用命令 <span class="command">A</span> 进入插入模式，光标也自动跳至最高一行的行尾：</p>
+        <pre><code>
+  var one = 1<span class="cursor"> </span>
+  var letter = 'a'
+  var string = "this is a string"
+        </code></pre>
+        <p>插入分号后返回普通模式，如同<a href="#tip-25">备忘二十五</a>，我们再次见识到 Vim 的神奇反应，分号被添加到下两行行尾。</p>
+        <pre><code>
+  var one = <span class="cursor">1</span>;
+  var letter = 'a';
+  var string = "this is a string";
+        </code></pre>
+        <p class="remark">受这一命令的启发，本人好奇的使用命令 <span class="command">f{字符}</span> 尝试了一下，看看是否 Vim 智能到也能理解这个意思，不过不幸的是，答案是否定的，要不给 Vim 作者写个邮件，提个建议？或者自己编写个插件什么的？</p>
+        <p>多说无益，还是得自个试试才行，<a download="tip-26.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-26.txt">tip-26.txt</a> 。</p>
+        <p class="remark">最后在这里再多说几句 Vim 关于 <span class="command">i</span> 和 <span class="command">a</span> 的惯例，在普通模式直接使用它们都讲进入插入模式，无非光标的位置略有差别，同样的，<span class="command">I</span> 和 <span class="command">A</span> 也是如此，只是 <span class="command">I</span> 将光标置于一行首个非空白字符前，一个置于行尾。类似的在可视化模式下，<span class="command">I</span> 和 <span class="command">A</span> 也用于切换进入插入模式，一个将光标置于被选择文本头前，另一个将光标置于被选择的文本尾后。于是我们会想，<span class="command">i</span> 和 <span class="command">a</span> 在可视化模式下是啥意思呢？这里它们所遵循的惯例有另外的意义：它俩代表一个文本对象的前一半，用于限定文本对象，<span class="command">i</span> 表示里边，<span class="command">a</span> 表示全部，它们和另外一键组合起来共同表示一个文本对象，比如<a href="#tip-23">备忘二十三</a>中提到过的 <span class="command">vit</span> 中的 <span class="command">it</span> 就表示一个标签的内部。具体请参看<a href="#tip-51">备忘五十一</a>。</p>
+        </article>
+
+        <!-- Tip 27 -->
+        <article id="tip-27">
+        <h4>备忘二十七、</h4>
+        </article>
+
+        <!-- Tip 28 -->
+        <article id="tip-28">
+        <h4>备忘二十八、</h4>
+        </article>
+
+        <!-- Tip 29 -->
+        <article id="tip-29">
+        <h4>备忘二十九、</h4>
+        </article>
+
+        <!-- Tip 30 -->
+        <article id="tip-30">
+        <h4>备忘三十、</h4>
+        </article>
+
+        <!-- Tip 31 -->
+        <article id="tip-31">
+        <h4>备忘三十一、</h4>
+        </article>
+
+        <!-- Tip 32 -->
+        <article id="tip-32">
+        <h4>备忘三十二、</h4>
+        </article>
+
+        <!-- Tip 33 -->
+        <article id="tip-33">
+        <h4>备忘三十三、</h4>
+        </article>
+
+        <!-- Tip 34 -->
+        <article id="tip-34">
+        <h4>备忘三十四、</h4>
+        </article>
+
+        <!-- Tip 35 -->
+        <article id="tip-35">
+        <h4>备忘三十五、</h4>
         </article>
 
         <!-- Visual mode: END -->
