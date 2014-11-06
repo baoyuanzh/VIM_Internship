@@ -382,7 +382,7 @@
   &lt;a href="#"&gt;two&lt;/a&gt;
   &lt;a href="#"&gt;three&lt;/a&gt;
         </code></pre>
-        <p>现在我想把标签内的文本全部改成大写。利用可视化模式在第一行用命令 <span class="command">vit</span> 选中文本 <code>one</code> ，这里的 <span class="command">it</span> 是一个比较特殊的移动命令，叫做文本对象，可以理解为“标签内的文本”，具体可参考<a href="#tip-51">备忘五十一</a>，整个命令可理解为“可视化选中标签内的文本”。接着用可视化模式下的命令 <span class="command">U</span> 将其全部大写，关于该命令请参考 <span class="command">:h v_U</span> ，文本变为如下，光标停留在字母 O 上。</p>
+        <p>现在我想把标签内的文本全部改成大写。利用可视化模式在第一行用命令 <span class="command">vit</span> 选中文本 <code>one</code> ，这里的 <span class="command">it</span> 是一个比较特殊的移动命令，叫做文本对象，可以理解为“标签内的文本”，具体可参考<a href="#tip-51">备忘五十一</a>，整个命令可理解为“可视化选中标签内的文本”。接着用可视化模式下的命令 <span class="command">U</span> 将其全部大写，关于该命令请参考 <span class="command">:h v_U</span> ，文本变化如下，光标停留在字母 O 上。</p>
         <pre><code>
   &lt;a href="#"&gt;<span class="cursor">O</span>NE&lt;/a&gt;
   &lt;a href="#"&gt;two&lt;/a&gt;
@@ -440,7 +440,7 @@
 
         <!-- Tip 25 -->
         <article id="tip-25">
-        <h4>备忘二十五、如何改变列</h4>
+        <h4>备忘二十五、如何同时改动连续多行的同几列</h4>
         <p>块可视化模式并不仅仅能用来编辑表格，它还可以同时在若干行插入文本或改变文本。假设有这样的文本：</p>
         <pre><code>
   <span class="cursor">l</span>i.one   a{ background-image: url('/images/sprite.png'); }
@@ -476,7 +476,7 @@
         <pre><code>
   var one <span class="selected">= 1</span>
   var lett<span class="selected">er = 'a'</span>
-  var stri<span class="selected">ng = "this is a string</span><span class="cursor">"</span>
+  var stri<span class="selected">ng = "this is a string"</span><span class="cursor"> </span>
         </code></pre>
         <p>接着用命令 <span class="command">A</span> 进入插入模式，光标也自动跳至最高一行的行尾：</p>
         <pre><code>
@@ -490,9 +490,9 @@
   var letter = 'a';
   var string = "this is a string";
         </code></pre>
-        <p class="remark">受这一命令的启发，本人好奇的使用命令 <span class="command">f{字符}</span> 尝试了一下，看看是否 Vim 智能到也能理解这个意思，不过不幸的是，答案是否定的，要不给 Vim 作者写个邮件，提个建议？或者自己编写个插件什么的？</p>
+        <p class="remark">受这一命令的启发，本人好奇地使用命令 <span class="command">f{字符}</span> 尝试了一下，看看是否 Vim 智能到也能理解这个意思，不过不幸的是，答案是否定的，要不给 Vim 作者写个邮件，提个建议？或者自己编写个插件什么的？</p>
         <p>多说无益，还是得自个试试才行，<a download="tip-26.txt" href="https://raw.githubusercontent.com/baoyuanzh/VIM_Internship/master/tip-26.txt">tip-26.txt</a> 。</p>
-        <p class="remark">最后在这里再多说几句 Vim 关于 <span class="command">i</span> 和 <span class="command">a</span> 的惯例，在普通模式直接使用它们都讲进入插入模式，无非光标的位置略有差别，同样的，<span class="command">I</span> 和 <span class="command">A</span> 也是如此，只是 <span class="command">I</span> 将光标置于一行首个非空白字符前，一个置于行尾。类似的在可视化模式下，<span class="command">I</span> 和 <span class="command">A</span> 也用于切换进入插入模式，一个将光标置于被选择文本头前，另一个将光标置于被选择的文本尾后。于是我们会想，<span class="command">i</span> 和 <span class="command">a</span> 在可视化模式下是啥意思呢？这里它们所遵循的惯例有另外的意义：它俩代表一个文本对象的前一半，用于限定文本对象，<span class="command">i</span> 表示里边，<span class="command">a</span> 表示全部，它们和另外一键组合起来共同表示一个文本对象，比如<a href="#tip-23">备忘二十三</a>中提到过的 <span class="command">vit</span> 中的 <span class="command">it</span> 就表示一个标签的内部。具体请参看<a href="#tip-51">备忘五十一</a>。</p>
+        <p class="remark">最后在这里再多说几句 Vim 关于 <span class="command">i</span> 和 <span class="command">a</span> 的惯例，在普通模式直接使用它们都讲进入插入模式，无非光标的位置略有差别，同样的，<span class="command">I</span> 和 <span class="command">A</span> 也是如此，只是 <span class="command">I</span> 将光标置于一行首个非空白字符前，一个置于行尾。类似的在可视化模式下，<span class="command">I</span> 和 <span class="command">A</span> 也用于切换进入插入模式，一个将光标置于被选择文本头前，另一个将光标置于被选择的文本尾后。于是我们会想，<span class="command">i</span> 和 <span class="command">a</span> 在可视化模式下是啥意思呢？这里它们所遵循的惯例有另外的意义：它俩代表一个文本对象的前一半，用于限定文本对象，<span class="command">i</span> 表示里边，<span class="command">a</span> 表示全部，它们和另外一键组合起来共同表示一个文本对象，比如<a href="#tip-23">备忘二十三</a>中提到过的 <span class="command">vit</span> 中的 <span class="command">it</span> 就表示一个文本对象，意义为一个标签的内部。关于文本对象，请具体参看<a href="#tip-51">备忘五十一</a>。</p>
         </article>
 
         <!-- Tip 27 -->
