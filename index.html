@@ -495,9 +495,33 @@
         <p class="remark">最后在这里再多说几句 Vim 关于 <span class="command">i</span> 和 <span class="command">a</span> 的惯例，在普通模式直接使用它们都讲进入插入模式，无非光标的位置略有差别，同样的，<span class="command">I</span> 和 <span class="command">A</span> 也是如此，只是 <span class="command">I</span> 将光标置于一行首个非空白字符前，一个置于行尾。类似的在可视化模式下，<span class="command">I</span> 和 <span class="command">A</span> 也用于切换进入插入模式，一个将光标置于被选择文本头前，另一个将光标置于被选择的文本尾后。于是我们会想，<span class="command">i</span> 和 <span class="command">a</span> 在可视化模式下是啥意思呢？这里它们所遵循的惯例有另外的意义：它俩代表一个文本对象的前一半，用于限定文本对象，<span class="command">i</span> 表示里边，<span class="command">a</span> 表示全部，它们和另外一键组合起来共同表示一个文本对象，比如<a href="#tip-23">备忘二十三</a>中提到过的 <span class="command">vit</span> 中的 <span class="command">it</span> 就表示一个文本对象，意义为一个标签的内部。关于文本对象，请具体参看<a href="#tip-51">备忘五十一</a>。</p>
         </article>
 
+        <!-- Visual mode: END -->
+        </section>
+
+        <!-- Command-Line mode: BEGIN -->
+        <section>
+
         <!-- Tip 27 -->
         <article id="tip-27">
-        <h4>备忘二十七、</h4>
+        <h4>备忘二十七、命令行模式</h4>
+        <p>Vim 的历史可以追溯到 ed 行编辑器，因而其基因可谓是古老而优秀。大致的发展路线可以参考这里：ed &mdash; ex &mdash; vi &mdash; vim</p>
+        <p class="remark">题外话，如果有时间，我再来补充这一段，Vim 到底是怎么从 ed 演变过来的，它们的取名其实都挺有意思的。</p>
+        <p>在命令行模式下，我们可以输入 Ex 命令，在普通模式下使用 <span class="command">:</span> 可以带我们进入命令行模式，这时在屏幕左下角将出现一个 : 和一个闪烁的光标等待输入，我们可以输入一个 Ex 命令，然后按回车来执行。当然了，我们还有其它方法来进入命令行模式，比如 <span class="command">/</span> 可以引起搜索提示，<span class="command">&lt;ctrl-r&gt;=</span> 可以启动表达式寄存器，参考<a href="#tip-16">备忘十六</a>，但是在这一备忘和接下来的几个备忘中，我们暂时主要关注由 <span class="command">:</span> 引起的 Ex 命令。</p>
+        <p>事实上，Vim 对于 Vim 中的任何事情都有相关的 Ex 命令。比如用 <span class="command">:edit</span> 和 <span class="command">:write</span> 来编辑和保存文件，用 <span class="command">:tabnew</span> 来创建一个新的标签页，用 <span class="command">:split</span> 来分割窗口，用 <span class="command">:prev</span>/<span class="command">:next</span> 来和参数列表交互，用 <span class="command">:bprev</span>/<span class="command">:bnext</span> 在缓冲文件之间切换等等，完整的 Ex 命令列表请参考 <span class="command">:h ex-cmd-index</span> 。</p>
+        <p>命令行模式和插入模式有一些相通的地方 &mdash; 在进入模式后需要输入文本。因此一般的按键被当做文本输入，如果在这两个模式下还需要发动一些特殊的命令，则需要 <span class="command">ctrl</span> 键来帮助。比如<a href="#tip-13">备忘十三</a>中提到的 <span class="command">&lt;ctrl-w&gt;</span> 和 <span class="command">&lt;ctrl-u&gt;</span> ，<a href="#tip-17">备忘十七</a>提到的 <span class="command">&lt;ctrl-v&gt;</span> 和 <a href="#tip-18">备忘十八</a>提到的 <span class="command">&lt;ctrl-k&gt;</span> ，以及<a href="#tip-16">备忘十六</a>提到的 <span class="command">&lt;ctrl-r&gt;=</span> 。</p>
+        <p>在命令行模式中我们一般只能有左右方向键来移动光标，但是实际上 Vim 的 Ex 命令本质上仍然是一些文本，因此 Vim 提供了这样一个地方让我们来编辑命令，这个地方叫命令行窗口，这个窗口就好像是一个打开的文件，编辑命令就好像是在编辑普通的文本，因而你可以使用所有 Vim 的功能。</p>
+        <p>Ex 命令的优点在于它的影响力。一般来说，普通模式下的命令是光标附近小范围的，一般不超出当前一个屏幕的范围，Ex 命令则不同，你可以在任何时候发起它，光标位置的影响并不大，而且它的改动可以是同时多行的，那些行甚至不在你当前的视线范围之内。因此，通常当你需要做出的改动涉及的范围广，涉及的地方远时，那么 Ex 命令将更快更好，它也许就是你的最佳选择。</p>
+        <p>最后列出几个常用的 Ex 命令的完整模式，让我们有个大概的感觉，它们的意义将在接下去的备忘中揭晓：</p>
+        <ul>
+          <li>:[范围]delete [寄存器名]</li>
+          <li>:[范围]yank [寄存器名]</li>
+          <li>:[范围]put [寄存器名]</li>
+          <li>:[范围]copy [行号]</li>
+          <li>:[范围]move [行号]</li>
+          <li>:[范围]join</li>
+          <li>:[范围]substitute/{范式}/{替换文本}/[标志]</li>
+          <li>:[范围]global/{范式}/[命令]</li>
+        </ul>
         </article>
 
         <!-- Tip 28 -->
@@ -540,7 +564,7 @@
         <h4>备忘三十五、</h4>
         </article>
 
-        <!-- Visual mode: END -->
+        <!-- Command-Line mode: END -->
         </section>
 
         <!-- Part 1: Modes: END -->
@@ -576,7 +600,7 @@
         <!-- Part 5: Patterns: BEGIN -->
         <section class="p5-patterns">
 
-        <h3>模型</h3>
+        <h3>范式</h3>
         <p></p>
 
         <!-- Part 5: Patterns: END -->
